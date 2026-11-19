@@ -733,6 +733,66 @@
   @media (max-width: 1099px) and (min-width: 920px) { .nav-links { gap: .65rem; font-size: .8rem; } }
   @media (max-width: 380px) { .foot-wordmark { font-size: 1.35rem; } .slogan { font-size: .78rem; } }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } .js .fade { opacity: 1; transform: none; } }
+  /* ======== MAKUNAIMA + TRAIL ======== */
+  #makunaima { background: var(--sage-3); border-color: var(--sage-rule); }
+  #trail { background: var(--sage-1); }
+  :where(#makunaima, #trail) .eyebrow { color: var(--leaf-deep); }
+  :where(#makunaima, #trail) .eyebrow::before { background: var(--leaf); }
+
+  .lineage-title { margin-top: clamp(3rem, 6vw, 4.5rem); }
+  .lineage-title em, .lineage em { font-family: var(--script); font-style: italic; font-weight: 500; }
+  .lineage {
+    list-style: none; margin: 1.75rem 0 0; padding: 0;
+    display: grid; gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    counter-reset: lineage;
+  }
+  .lineage li {
+    position: relative; padding: 1.5rem 1.4rem 1.4rem;
+    background: color-mix(in oklch, var(--paper) 70%, white);
+    border: 1px solid var(--sage-rule); border-top: 3px solid var(--leaf); border-radius: 6px;
+  }
+  .lineage li:nth-child(3) { border-top-color: var(--gold); }
+  .lineage li:nth-child(4) { border-top-color: var(--leaf-deep); }
+  .lineage-when { display: block; font-size: .7rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--leaf-deep); }
+  .lineage li:nth-child(3) .lineage-when { color: var(--gold-deep); }
+  .lineage h4, .stages h4 { margin: .5rem 0 .4rem; font-family: var(--display); font-weight: 400; font-size: 1.45rem; line-height: 1.15; color: var(--ink); }
+  .lineage p, .stages p { margin: 0; color: var(--ink-soft); font-size: .97rem; line-height: 1.55; }
+  .lineage-note { margin: 1.5rem 0 0; max-width: 60ch; font-family: var(--script); font-style: italic; font-size: 1.25rem; color: var(--ink); }
+
+  .profile { margin: 2.5rem 0 0; }
+  .profile-scroll {
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    background: color-mix(in oklch, var(--paper) 72%, white);
+    border: 1px solid var(--sage-rule); border-radius: 8px; padding: 1rem .5rem .25rem;
+  }
+  .profile-scroll:focus-visible { outline: 2px solid var(--leaf-deep); outline-offset: 3px; }
+  .profile svg { display: block; width: 100%; min-width: 680px; height: auto; }
+  .profile-grid line { stroke: var(--sage-rule); stroke-width: 1; stroke-dasharray: 3 5; }
+  .profile-grid text, .profile-km text { font: 500 12px var(--sans); fill: var(--muted); }
+  .profile-grid text { text-anchor: end; }
+  .profile-line { fill: none; stroke: var(--leaf-deep); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+  .profile-points circle { fill: var(--gold); stroke: color-mix(in oklch, var(--paper) 70%, white); stroke-width: 3; }
+  .profile-labels text { font: 600 14px var(--sans); fill: var(--ink); }
+  .profile figcaption { margin-top: .75rem; font-size: .82rem; color: var(--muted); }
+  .profile-hint { display: none; font-weight: 600; color: var(--leaf-deep); }
+  @media (max-width: 720px) { .profile-hint { display: block; margin-bottom: .25rem; } }
+
+  .stages {
+    list-style: none; margin: 2rem 0 0; padding: 0;
+    display: grid; gap: 0 2rem; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  }
+  .stages li { display: flex; gap: 1rem; padding: 1.1rem 0; border-top: 1px solid var(--sage-rule); }
+  .stages h4 { margin-top: 0; font-size: 1.3rem; }
+  .stage-n { flex: 0 0 2.2rem; font-family: var(--display); font-size: 1.4rem; line-height: 1.2; color: var(--gold-deep); }
+
+  .difficulty {
+    margin-top: 2rem; padding: 1.4rem 1.5rem; max-width: 70ch;
+    background: var(--leaf-deep); color: var(--sage-3); border-radius: 8px;
+  }
+  .difficulty-tag { display: inline-block; margin-bottom: .6rem; padding: .3rem .8rem; border-radius: 999px; background: var(--gold); color: var(--ink); font-size: .72rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+  .difficulty p { margin: 0; font-size: 1.02rem; line-height: 1.6; }
+  .difficulty a { color: var(--sage-1); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 </style>
 </head>
 <body id="top">
@@ -1078,6 +1138,104 @@
     </div>
   </figcaption>
   </figure>
+</section>
+
+<section class="prose" id="makunaima">
+  <div class="wrap">
+    <span class="eyebrow">The heart of the world</span>
+    <div class="prose-grid">
+      <h2 class="fade">A mountain with a guardian.</h2>
+      <div class="prose-copy fade">
+        <p>For the <strong>Pemon</strong> in Venezuela and the <strong>Macuxi</strong> in Brazil, Roraima is sacred. In one telling it is the heart of the planet: its waters are blood and its rivers are veins, feeding three great basins, the Orinoco, the Amazon and the Essequibo.</p>
+        <p>In their tradition, <em>Makunaima</em> is the mountain&rsquo;s guardian. He commands nature and changes the conditions as he pleases. People who walk the trail often describe it as his test of persistence, so I plan to arrive with respect, patience and dry socks.</p>
+        <p>The rock itself is roughly two billion years old, among the oldest on Earth. The tabletop shape came much later, carved out slowly by water and wind.</p>
+      </div>
+    </div>
+
+    <h3 class="lineage-title fade">From Makunaima to <em>Macuna&iacute;ma</em></h3>
+    <ol class="lineage">
+      <li class="fade">
+        <span class="lineage-when">Always</span>
+        <h4>The tradition</h4>
+        <p>Makunaima, creator and trickster in Pemon and Macuxi stories. Living knowledge, not a legend from the past.</p>
+      </li>
+      <li class="fade">
+        <span class="lineage-when">1911&ndash;1913</span>
+        <h4>The record</h4>
+        <p>German ethnographer Theodor Koch-Gr&uuml;nberg hears the stories from two Pemon narrators, Mayulua&iacute;pu and Akuli, and publishes them in <em>Vom Roraima zum Orinoco</em>.</p>
+      </li>
+      <li class="fade">
+        <span class="lineage-when">1928</span>
+        <h4>The novel</h4>
+        <p>M&aacute;rio de Andrade, who never went to Roraima, turns him into <em>Macuna&iacute;ma: the hero without any character</em>, a founding book of Brazilian modernism. The narrators almost disappear from the story.</p>
+      </li>
+      <li class="fade">
+        <span class="lineage-when">Today</span>
+        <h4>The return</h4>
+        <p>Macuxi artist Jaider Esbell (1979&ndash;2021), from Roraima, brings Makunaima back as an ancestor, a grandfather, not a character. His work was a highlight of the 34th S&atilde;o Paulo Bienal in 2021.</p>
+      </li>
+    </ol>
+    <p class="lineage-note fade">I grew up knowing the famous book. Telling it in this order, people first, matters to me.</p>
+  </div>
+</section>
+
+<section id="trail">
+  <div class="wrap">
+    <span class="eyebrow">The walk</span>
+    <h2 class="fade" style="max-width: 24ch;">From savannah to another planet, in about 25 kilometres.</h2>
+    <div class="prose-copy fade" style="margin-top: 1.5rem; max-width: 62ch;">
+      <p>The classic route starts on the Venezuelan side. First, 78&nbsp;km by 4x4 from Santa Elena de Uair&eacute;n to the village of Paraitepui. Then on foot across open savannah and two rivers, the T&euml;k and the Kukenan, to base camp under the tepui&rsquo;s near-vertical wall. A natural ramp of loose rock climbs the wall to the summit, which people describe as arriving on another planet.</p>
+      <p>The mountain is protected by Canaima National Park in Venezuela and Monte Roraima National Park in Brazil. My own route, days and access are still to plan with a local guide.</p>
+    </div>
+
+    <figure class="profile fade">
+      <div class="profile-scroll" tabindex="0" role="region" aria-label="Elevation profile, scrolls sideways on small screens">
+        <svg viewBox="0 0 1000 300" role="img" aria-labelledby="profile-title profile-desc">
+          <title id="profile-title">Elevation profile of the classic Roraima route</title>
+          <desc id="profile-desc">From Paraitepui at 1,200 m the trail dips to the Tëk and Kukenan river camps at 1,050 m around kilometre 13, climbs to base camp at 1,870 m around kilometre 22, then up the ramp to the summit camps at 2,700 m around kilometre 24.5, and on across the top to La Proa at 2,750 m around kilometre 34.5.</desc>
+          <defs>
+            <linearGradient id="profile-fill" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0" stop-color="oklch(0.54 0.095 143)" stop-opacity=".55"/>
+              <stop offset="1" stop-color="oklch(0.54 0.095 143)" stop-opacity=".08"/>
+            </linearGradient>
+          </defs>
+          <g class="profile-grid">
+            <line x1="60" x2="940" y1="250" y2="250"/><line x1="60" x2="940" y1="197" y2="197"/><line x1="60" x2="940" y1="145" y2="145"/><line x1="60" x2="940" y1="92" y2="92"/>
+            <text x="50" y="254">1,000</text><text x="50" y="201">1,500</text><text x="50" y="149">2,000</text><text x="50" y="96">2,500 m</text>
+          </g>
+          <path d="M60 229 L353 245 L392 245 L621 158 L685 71 L940 66 L940 250 L60 250 Z" fill="url(#profile-fill)"/>
+          <path class="profile-line" d="M60 229 L353 245 L392 245 L621 158 L685 71 L940 66"/>
+          <g class="profile-points">
+            <circle cx="60" cy="229" r="6"/><circle cx="353" cy="245" r="6"/><circle cx="392" cy="245" r="6"/><circle cx="621" cy="158" r="6"/><circle cx="685" cy="71" r="6"/><circle cx="940" cy="66" r="6"/>
+          </g>
+          <g class="profile-labels">
+            <text x="60" y="212" text-anchor="start">Paraitepui · 1,200</text>
+            <text x="372" y="226" text-anchor="middle">Tëk &amp; Kukenan · 1,050</text>
+            <text x="606" y="146" text-anchor="end">Base camp · 1,870</text>
+            <text x="685" y="50" text-anchor="middle">Summit · 2,700</text>
+            <text x="940" y="44" text-anchor="end">La Proa · 2,750</text>
+          </g>
+          <g class="profile-km">
+            <text x="60" y="276" text-anchor="start">0 km</text><text x="392" y="276" text-anchor="middle">13</text><text x="621" y="276" text-anchor="middle">22</text><text x="685" y="276" text-anchor="middle">24.5</text><text x="940" y="276" text-anchor="end">34.5 km</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption><span class="profile-hint">Swipe the chart to see the climb &rarr;</span> Distances and altitudes are approximate, adapted from a commonly shared trekking profile of the Paraitepui route.</figcaption>
+    </figure>
+
+    <ol class="stages">
+      <li class="fade"><span class="stage-n">01</span><div><h4>Santa Elena de Uair&eacute;n &rarr; Paraitepui</h4><p>78&nbsp;km by 4x4. The walk starts at 1,200&nbsp;m.</p></div></li>
+      <li class="fade"><span class="stage-n">02</span><div><h4>Savannah to the river camps</h4><p>About 13&nbsp;km to the T&euml;k and Kukenan camps, 1,050&nbsp;m.</p></div></li>
+      <li class="fade"><span class="stage-n">03</span><div><h4>Up to base camp</h4><p>About 9&nbsp;km, climbing to 1,870&nbsp;m under the wall.</p></div></li>
+      <li class="fade"><span class="stage-n">04</span><div><h4>The ramp</h4><p>Only 2.5&nbsp;km, but steep loose rock, to the summit camps at 2,700&nbsp;m.</p></div></li>
+      <li class="fade"><span class="stage-n">05</span><div><h4>Across the top</h4><p>Around 10&nbsp;km of wandering: the triple border point, Lago Gladys and La Proa, 2,750&nbsp;m.</p></div></li>
+    </ol>
+
+    <aside class="difficulty fade" aria-label="Difficulty">
+      <span class="difficulty-tag">Difficulty · Hard</span>
+      <p>Doable for most people, but honestly tiring: days of rough ground and constant ups and downs. Guides recommend good fitness and some trekking experience. Which is why the <a href="#prep">preparation plan</a> starts now, not next year.</p>
+    </aside>
+  </div>
 </section>
 
 <section class="prose" id="fauna">

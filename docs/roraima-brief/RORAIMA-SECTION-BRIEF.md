@@ -1,71 +1,59 @@
-# Brief: Monte Roraima section for mounjarotokillimanjaro.com
+# Brief: Monte Roraima content for mounjarotokillimanjaro.com
 
-Target repo: https://github.com/tropicgirlie/killimanjaro (empty as of 2026-11-19, site code not pushed yet)
-Asset: `roraima-elevation-profile.png` (trail elevation profile, labels in Spanish)
+Status: **implemented** in `index.html` as two new sections after `#roraima`:
+- `#makunaima`: "A mountain with a guardian" (mythology, geology, Makunaima → Macunaíma timeline)
+- `#trail`: "From savannah to another planet" (route, elevation profile, stages, difficulty)
 
-## 1. Content (original Portuguese, as supplied)
+Asset: `roraima-elevation-profile.png` (the original Spanish-labelled profile). It isn't used on the site; the chart was redrawn as SVG from the data below.
 
-### O coração do planeta
-De acordo com a mitologia dos povos ameríndios, Roraima é o coração do planeta. Suas águas são o sangue e seus rios, suas veias, alimentando as bacias dos rios Orinoco, Amazonas e Esequibo.
+## 1. Source text, translated to English (from the Portuguese supplied)
 
-De origens pré-históricas, o Monte Roraima ergueu-se da terra há mais de 2 bilhões de anos, no período em que América do Sul e África eram unidos em um único continente. ⚠️ see fact check
+> According to the mythology of the Amerindian peoples, Roraima is the heart of the planet. Its waters are its blood and its rivers its veins, feeding the Orinoco, Amazon and Essequibo basins.
+>
+> Of prehistoric origin, Monte Roraima rose from the earth more than two billion years ago, when South America and Africa were joined in a single continent. ⚠️ see fact check
+>
+> For the Pemon of Venezuela and the Macuxi of Brazil, the mountain is sacred. Makunaima, the guardian of the mountain, commands nature and changes local conditions at will.
+>
+> For the adventurers who dare to walk the trail and climb to the top, Makunaima's divine strength shows itself as a real test of persistence, constantly testing the travellers' willpower.
+>
+> On the journey you cross a vast savannah until you reach the vertical wall of the tepui, almost 1,000 metres high. From there the climb begins up a natural ramp of loose rock along the wall, to the summit, which some describe as arriving on another planet. The Monte Roraima region is managed and protected by Canaima National Park in Venezuela and Monte Roraima National Park in Brazil.
+>
+> Difficulty: Hard. Accessible to most people, but be aware that the trail is hard and tiring. We walk a lot on rough terrain, with frequent ups and downs, and the physical strain is exhausting. This itinerary needs willingness and good fitness. Recommended for people with hiking experience.
 
-### Makunaima, o guardião
-Para os Pemons, da Venezuela, e Macuxis, do Brasil, o Monte é sagrado. É Makunaima, o guardião do Monte, que comanda a natureza, e altera as condições locais conforme sua vontade.
+The site copy is a **rewrite in Luana's voice**, not this translation. The source reads like a tour operator ("we walk", "we recommend"), so publishing it word for word risks both copyright and tone.
 
-Para os aventureiros que ousam percorrer os caminhos da trilha e subir até seu topo, a força divina de Makunaima se revela numa verdadeira prova de persistência, testando constantemente o poder de vontade dos viajantes.
-
-### De Makunaima a Macunaíma (new, draft)
-Order matters here: Indigenous tradition first, then the famous version, then the reclaiming.
-
-1. **A tradição.** Para os Pemon e Macuxi, Makunaima é herói criador e trapaceiro, ligado ao Monte e aos tepuis. Essas histórias são conhecimento vivo desses povos, não lenda do passado.
-2. **O registro.** Entre 1911 e 1913, o etnógrafo alemão Theodor Koch-Grünberg ouviu essas histórias de dois narradores, Mayuluaípu e Akuli, e publicou em *Vom Roraima zum Orinoco* ("Do Roraima ao Orinoco").
-3. **O romance.** Mário de Andrade leu Koch-Grünberg sem nunca ter ido a Roraima e escreveu *Macunaíma: o herói sem nenhum caráter* (1928), marco do Modernismo brasileiro. O herói nasce às margens do Uraricoera, perde o muiraquitã, vai a São Paulo e termina virando a Ursa Maior. Em 1969 virou filme de Joaquim Pedro de Andrade, com Grande Otelo.
-4. **A crítica.** O livro transformou uma figura sagrada Pemon em símbolo da "brasilidade", e os narradores indígenas quase desapareceram da história.
-5. **A retomada.** O artista macuxi Jaider Esbell (1979–2021), de Roraima, devolveu Makunaima ao lugar de ancestral, de avô, e não de personagem. Sua obra teve destaque na 34ª Bienal de São Paulo (2021).
-
-Optional personal bridge (Luana's voice): link it to growing up in Brazil reading/hearing about *Macunaíma* at school, and only later learning where he really came from. That would make it hers, not encyclopaedic.
-
-Verify before publishing: Koch-Grünberg's expedition dates and the narrators' name spellings, plus the Esbell details (dates, Bienal), against a primary source. Use an image from Esbell's work only with permission from his estate or gallery.
-
-### A trilha
-Na viagem você pode desfrutar de uma imensa savana até chegar à parede vertical do tepuy, que tem quase 1000 metros de altura. A partir daí começa a subida por uma rampa natural de rochas soltas da muralha, até chegar ao cume, que alguns descrevem como chegar a outro planeta.
-
-A região do Monte Roraima é administrada e protegida na Venezuela pelo Parque Nacional Canaima e no Brasil pelo Parque Nacional do Monte Roraima.
-
-### Nível de dificuldade: Difícil
-Acessível à maioria das pessoas, mas é preciso ter consciência de que a realidade da trilha é difícil e cansativa. Caminhamos muito em terrenos acidentados, com subidas e descidas frequentes e o desgaste físico é extenuante. Este roteiro exige disposição e bom condicionamento físico. Recomendamos para pessoas com experiência em caminhadas.
-
-## 2. Trail data (transcribed from the image)
+## 2. Trail data (from the elevation profile)
 
 | # | Point | Altitude | Distance from previous | Mode |
 |---|---|---|---|---|
 | 0 | Santa Elena de Uairén | – | – | start |
-| 1 | Paraitepui | 1200 m | 78 km | 4x4 |
-| 2 | Campamento Tëk (Río Tëk) | 1050 m | 13 km (to Tëk/Kukenan) | trek |
-| 3 | Campamento Kukenan (Río Kukenan) | 1050 m | ↑ | trek |
-| 4 | Campamento Base Tepuy | 1870 m | 9 km | trek |
-| 5 | Camp. Cima "Hoteles" | 2700 m | 2.5 km | climb the ramp |
-| 6 | Summit: Punto Triple 2723 m · Camp. Coati "Hotel Brasil" 2720 m · Lago Gladys · La Proa 2750 m | 2700–2750 m | ~10 km on top | trek |
+| 1 | Paraitepui | 1,200 m | 78 km | 4x4 |
+| 2 | Tëk camp (Tëk river) | 1,050 m | ~13 km to Tëk/Kukenan | on foot |
+| 3 | Kukenan camp (Kukenan river) | 1,050 m | ↑ | on foot |
+| 4 | Base camp (Base Tepuy) | 1,870 m | 9 km | on foot |
+| 5 | Summit camps ("Hoteles") | 2,700 m | 2.5 km | the ramp |
+| 6 | Summit: Triple Point 2,723 m · Coati camp ("Hotel Brasil") 2,720 m · Lago Gladys · La Proa 2,750 m | 2,700–2,750 m | ~10 km on top | on foot |
 
-Trekking total ≈ 34.5 km one way (13 + 9 + 2.5 + 10), plus 78 km by road.
-Note: Punto Triple = where Venezuela, Brazil and Guyana meet.
+About 24.5 km on foot to the summit, ~34.5 km including the summit walk, plus 78 km by road.
+The Tëk camp position (km 11.5) in the chart is an estimate; the source only gives 13 km for that stretch.
 
-## 3. Fact check before publishing
+## 3. Fact check, and how the site handles it
 
-- **"2 bilhões de anos / América do Sul e África unidas"** mixes two different eras. The Roraima sandstone is roughly 1.7–2 billion years old, but South America and Africa were joined in Gondwana/Pangaea until about 130–100 million years ago. And the mountain didn't "rise" back then, tepuis were carved out by erosion over a very long time. Suggested fix: "As rochas do Monte Roraima têm cerca de 2 bilhões de anos, entre as mais antigas do planeta, e foram esculpidas pela erosão ao longo de eras, muito antes de América do Sul e África se separarem."
-- **Walls "quase 1000 m"**: commonly cited as 400–1000 m depending on the side. "Até cerca de 1000 m" is safer.
-- **Difficulty text** says "acessível à maioria" and "recomendamos para pessoas com experiência" together. Pick one.
-- **First person "Caminhamos / Recomendamos"** reads like a tour operator. If this text came from an operator's site, rewrite it or credit them (copyright + voice).
-- **Makunaima**: Pemon/Macuxi sacred knowledge. Write it as "segundo a tradição Pemon e Macuxi", not as fact, and ideally credit an Indigenous source.
+| Claim in source | Problem | On the site |
+|---|---|---|
+| "Rose from the earth 2 billion years ago, when South America and Africa were joined" | Mixes eras. The sandstone is ~1.7–2 billion years old; the continents split ~100–130 million years ago; tepuis were carved by erosion, not pushed up. | "The rock itself is roughly two billion years old, among the oldest on Earth. The tabletop shape came much later, carved out slowly by water and wind." |
+| "Wall almost 1,000 m high" | Usually cited as 400–1,000 m depending on the side. | "near-vertical wall", no number |
+| "Accessible to most" + "recommended for experienced hikers" | Slightly contradictory | Kept both, framed honestly: "Doable for most people, but honestly tiring… Guides recommend good fitness and some trekking experience." |
+| Makunaima as fact | Sacred Indigenous knowledge | "In their tradition…", "In one telling…" |
 
-## 4. Open questions
+## 4. Still to verify against a primary source
 
-1. Language: the luana.systems card is in English, this text is Portuguese and the image is Spanish. Is the site bilingual, or should this be translated ?
-2. Elevation profile: use the image as-is, or rebuild it as a native SVG/HTML in the site's style (accessible, translatable, no third-party watermark) ? Recommended: rebuild, and keep the data table above as the source.
-3. Image rights: where does the PNG come from ?
+- Koch-Grünberg's expedition dates (1911–1913) and the narrators' spellings (Mayuluaípu, Akuli).
+- Jaider Esbell: dates (1979–2021) and the 34th São Paulo Bienal (2021).
+- Site height of 2,810 m (in the existing `#roraima` facts) vs La Proa 2,750 m. Both can be right (Maverick Rock is the highest point), but worth a caption if anyone asks.
 
-## 5. Implementation notes (for when the code is in the repo)
+## 5. Open for Luana
 
-- New section, probably after the story intro: "O coração do planeta" → "Makunaima" → "De Makunaima a Macunaíma" (could be a 5-step timeline) → "A trilha" (profile + stage list) → "Dificuldade" badge.
-- Profile chart: SVG, x = cumulative distance, y = altitude, camp markers with labels; data from section 2; alt text summarising the climb 1050 m → 2750 m.
+1. **"I grew up knowing the famous book."** This line in `#makunaima` was written for you. Keep it only if it's true; otherwise change or delete it.
+2. "Dry socks" joke: keep or drop.
+3. If you want Jaider Esbell's work shown, ask his estate or gallery for permission first.
