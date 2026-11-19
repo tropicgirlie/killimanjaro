@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="color-scheme" content="light">
+<title>{{subject}}</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:0; background:#E9D3AC; }
+  .bold { font-family:'Archivo Black','Arial Black','Helvetica Neue',Arial,sans-serif; }
+  .serif { font-family:Fraunces,Georgia,'Times New Roman',serif; }
+  @media (max-width:620px) {
+    .wrap { width:100% !important; }
+    .tile { padding:26px 22px !important; }
+    .stack { display:block !important; width:100% !important; box-sizing:border-box; padding:0 0 12px 0 !important; }
+    .mega { font-size:40px !important; line-height:42px !important; }
+    .big { font-size:30px !important; line-height:33px !important; }
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#E9D3AC;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">{{preheader}}</div>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#E9D3AC;">
+<tr><td align="center" style="padding:20px 10px;">
+<table role="presentation" class="wrap" width="600" cellpadding="0" cellspacing="0" style="width:600px;">
+
+  <!-- Masthead strip -->
+  <tr><td style="padding:0 0 12px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+      <td class="bold" style="font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#5E5424;">☀︎ Mounjaro to Kilimanjaro</td>
+      <td align="right" style="font:13px Arial,Helvetica,sans-serif;color:#5E5424;">{{dateRange}} · {{place}}</td>
+    </tr></table>
+  </td></tr>
+
+  <!-- Headline tile (bold) -->
+  <tr><td class="tile" style="background:#E08A2A;border-radius:22px;padding:34px 36px 30px;">
+    <span class="bold" style="display:inline-block;background:#F6E7CC;color:#5E5424;border-radius:999px;padding:7px 16px;font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;">{{labels.diary}} · {{labels.page}} {{issueNumber}}</span>
+    <div class="bold mega" style="font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:50px;line-height:52px;text-transform:uppercase;color:#2A2216;margin:22px 0 8px;letter-spacing:-0.5px;">{{headline}}</div>
+    {{#headlineHighlight}}<span class="bold big" style="display:inline-block;background:#E6C2B4;color:#5E5424;border-radius:16px;padding:6px 16px;font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:36px;line-height:42px;text-transform:uppercase;">{{headlineHighlight}}</span>{{/headlineHighlight}}
+    <div style="text-align:right;font-size:34px;line-height:34px;margin-top:6px;">🪷</div>
+  </td></tr>
+
+  <!-- Hero image tile -->
+  {{#hero}}
+  <tr><td style="padding-top:12px;">
+    <img src="{{src}}" alt="{{alt}}" width="600" style="display:block;width:100%;max-width:600px;height:auto;border-radius:22px;">
+  </td></tr>
+  {{/hero}}
+
+  <!-- Letter tile (muted) -->
+  <tr><td style="padding-top:12px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+    <td class="tile serif" style="background:#F6E7CC;border-radius:22px;padding:34px 36px;font-family:Fraunces,Georgia,serif;font-size:18px;line-height:29px;color:#2A2216;">
+      <p style="margin:0 0 14px;font-style:italic;">{{greeting}}</p>
+      {{#intro}}<p style="margin:0 0 14px;">{{.}}</p>{{/intro}}
+    </td></tr></table>
+  </td></tr>
+
+  <!-- Log tile (olive, bold numbers) -->
+  <tr><td style="padding-top:12px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+    <td class="tile" style="background:#5E5424;border-radius:22px;padding:32px 36px;font-family:Arial,Helvetica,sans-serif;color:#F6E7CC;">
+      <div class="bold" style="font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#E8A44C;">{{labels.log}}</div>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:14px;">
+        <tr>
+          {{#weight}}
+          <td class="stack" width="50%" valign="top" style="padding-right:8px;">
+            <div style="background:#E6C2B4;border-radius:16px;padding:18px;color:#3B3517;">
+              <div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;">{{labels.weight}}</div>
+              <div class="bold" style="font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:38px;line-height:44px;margin:4px 0;">{{value}}<span style="font-size:16px;"> kg</span></div>
+              <div style="font-size:13px;line-height:18px;">{{week}} {{labels.thisWeek}}<br>{{total}} {{labels.sinceStart}}</div>
+            </div>
+          </td>
+          {{/weight}}
+          <td class="stack" width="50%" valign="top" style="padding-left:8px;">
+            <div style="background:#E08A2A;border-radius:16px;padding:18px;color:#2A2216;">
+              <div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;">{{labels.mood}}</div>
+              <div style="font-size:38px;line-height:44px;margin:4px 0;">{{mood.emoji}}</div>
+              <div class="bold" style="font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:17px;text-transform:uppercase;">{{mood.word}}</div>
+              <div style="font-size:14px;letter-spacing:3px;margin-top:2px;">{{mood.dots}}</div>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:10px;">
+        {{#stats}}
+        <tr>
+          <td style="padding:11px 0;border-bottom:1px solid #7A6F38;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:#E6C2B4;">{{label}}</td>
+          <td align="right" style="padding:11px 0;border-bottom:1px solid #7A6F38;font-size:16px;color:#F6E7CC;">{{value}}</td>
+        </tr>
+        {{/stats}}
+      </table>
+    </td></tr></table>
+  </td></tr>
+
+  <!-- Moved my body tile (blush, pills) -->
+  <tr><td style="padding-top:12px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+    <td class="tile" align="center" style="background:#E6C2B4;border-radius:22px;padding:32px 30px;font-family:Arial,Helvetica,sans-serif;color:#3B3517;">
+      <div class="bold big" style="font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:34px;line-height:38px;text-transform:uppercase;color:#B9532C;margin-bottom:18px;">{{labels.moved}}</div>
+      {{#exercises}}
+      <div style="margin:0 0 10px;">
+        <span style="display:inline-block;background:#F6E7CC;border-radius:999px;padding:10px 20px;font-size:15px;line-height:20px;">
+          <strong class="bold" style="font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-weight:400;text-transform:uppercase;color:#B9532C;">{{day}}</strong>&nbsp; {{activity}} · {{duration}}
+        </span>
+        {{#note}}<div class="serif" style="font:italic 15px/21px Fraunces,Georgia,serif;color:#5E5424;margin-top:5px;">{{note}}</div>{{/note}}
+      </div>
+      {{/exercises}}
+      {{^exercises}}<div class="serif" style="font:italic 17px/25px Fraunces,Georgia,serif;">{{labels.restWeek}}</div>{{/exercises}}
+    </td></tr></table>
+  </td></tr>
+
+  <!-- Road to Roraima tile (forest, mega number) -->
+  <tr><td style="padding-top:12px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+    <td class="tile" style="background:#33391E;border-radius:22px;padding:32px 36px;font-family:Arial,Helvetica,sans-serif;color:#F6E7CC;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+        <td valign="top">
+          <div class="bold" style="font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#E8A44C;">⛰ {{labels.road}}</div>
+          <div class="bold mega" style="font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:64px;line-height:66px;color:#E8A44C;margin-top:8px;">{{road.percent}}%</div>
+          <div style="font-size:15px;color:#E6C2B4;">{{road.done}} {{labels.of}} {{road.goal}} km</div>
+        </td>
+        <td align="right" valign="top" style="font-size:44px;line-height:44px;">🌙</td>
+      </tr></table>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#4C5530;border-radius:999px;margin-top:16px;">
+        <tr><td width="{{road.percent}}%" style="background:#E8A44C;height:12px;border-radius:999px;font-size:0;line-height:0;">&nbsp;</td><td style="font-size:0;line-height:0;">&nbsp;</td></tr>
+      </table>
+      <div style="margin-top:16px;">
+        <span style="display:inline-block;background:#F6E7CC;color:#33391E;border-radius:999px;padding:9px 18px;font-size:14px;line-height:19px;"><strong>{{labels.next}}:</strong> {{road.nextMilestone}}</span>
+      </div>
+    </td></tr></table>
+  </td></tr>
+
+  <!-- Body notes tile (paper) -->
+  {{#bodyNotes}}
+  <tr><td style="padding-top:12px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+    <td class="tile" style="background:#F6E7CC;border-radius:22px;padding:30px 36px;font-family:Arial,Helvetica,sans-serif;color:#2A2216;">
+      <div class="bold" style="font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#B9532C;margin-bottom:12px;">{{labels.body}}</div>
+      {{#tags}}<span style="display:inline-block;margin:0 6px 8px 0;padding:8px 14px;background:#E6C2B4;border-radius:999px;font-size:14px;color:#3B3517;">{{.}}</span>{{/tags}}
+      {{#text}}<p class="serif" style="margin:8px 0 0;font:17px/27px Fraunces,Georgia,serif;">{{text}}</p>{{/text}}
+    </td></tr></table>
+  </td></tr>
+  {{/bodyNotes}}
+
+  <!-- Win / hard tiles -->
+  <tr><td style="padding-top:12px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+      <td class="stack" width="50%" valign="top" style="padding-right:6px;">
+        <div style="background:#E08A2A;border-radius:22px;padding:24px;color:#2A2216;">
+          <div class="bold" style="font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;">☀︎ {{labels.win}}</div>
+          <div class="serif" style="font:18px/26px Fraunces,Georgia,serif;margin-top:8px;">{{win}}</div>
+        </div>
+      </td>
+      <td class="stack" width="50%" valign="top" style="padding-left:6px;">
+        <div style="background:#5E5424;border-radius:22px;padding:24px;color:#F6E7CC;">
+          <div class="bold" style="font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#E6C2B4;">☁︎ {{labels.hard}}</div>
+          <div class="serif" style="font:18px/26px Fraunces,Georgia,serif;margin-top:8px;">{{hard}}</div>
+        </div>
+      </td>
+    </tr></table>
+  </td></tr>
+
+  <!-- Photo -->
+  {{#photo}}
+  <tr><td style="padding-top:12px;">
+    <img src="{{src}}" alt="{{alt}}" width="600" style="display:block;width:100%;max-width:600px;height:auto;border-radius:22px;">
+    <div class="serif" style="font:italic 14px/20px Fraunces,Georgia,serif;color:#5E5424;margin:8px 6px 0;">{{caption}}</div>
+  </td></tr>
+  {{/photo}}
+
+  <!-- Reply prompt tile (bold) -->
+  {{#prompt}}
+  <tr><td style="padding-top:12px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+    <td class="tile" align="center" style="background:#B9532C;border-radius:22px;padding:34px 30px;font-family:Arial,Helvetica,sans-serif;color:#F6E7CC;">
+      <div class="bold" style="font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:20px;line-height:26px;text-transform:uppercase;">{{question}}</div>
+      <div style="background:#F6E7CC;border-radius:16px;padding:16px 20px;margin:18px auto;max-width:420px;text-align:left;">
+        <span class="bold" style="font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:22px;line-height:28px;text-transform:uppercase;color:#B9532C;">{{starter}} ________</span>
+      </div>
+      <div class="bold" style="font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:14px;letter-spacing:1px;text-transform:uppercase;">{{labels.replyCta}}</div>
+    </td></tr></table>
+  </td></tr>
+  {{/prompt}}
+
+  <!-- Sign-off -->
+  <tr><td style="padding-top:12px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+    <td class="tile serif" style="background:#F6E7CC;border-radius:22px;padding:30px 36px;font-family:Fraunces,Georgia,serif;font-size:18px;line-height:29px;color:#2A2216;">
+      {{#closing}}<p style="margin:0 0 12px;">{{.}}</p>{{/closing}}
+      <p style="margin:14px 0 0;font-style:italic;">{{signoff}}</p>
+      <div class="bold" style="font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:30px;line-height:36px;text-transform:uppercase;color:#B9532C;">Luana</div>
+    </td></tr></table>
+  </td></tr>
+
+  <!-- Footer -->
+  <tr><td style="padding:22px 24px 8px;font:12px/18px Arial,Helvetica,sans-serif;color:#5E5424;text-align:center;">
+    {{labels.disclaimer}}<br><br>
+    {{labels.why}} <a href="https://mounjarotokillimanjaro.com/" style="color:#5E5424;">mounjarotokillimanjaro.com</a><br>
+    <a href="{{unsubscribeUrl}}" style="color:#5E5424;">{{labels.unsubscribe}}</a>
+  </td></tr>
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="color-scheme" content="light">
+<title>{{subject}}</title>
+<style>
+  body { margin:0; padding:0; background:#EFE6D6; }
+  a { color:#B4532A; }
+  @media (max-width:620px) {
+    .wrap { width:100% !important; }
+    .pad { padding-left:20px !important; padding-right:20px !important; }
+    .stack { display:block !important; width:100% !important; box-sizing:border-box; padding-left:0 !important; padding-right:0 !important; }
+    .stack-gap { padding-top:12px !important; }
+    .h1 { font-size:30px !important; line-height:36px !important; }
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#EFE6D6;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">{{preheader}}</div>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#EFE6D6;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<table role="presentation" class="wrap" width="600" cellpadding="0" cellspacing="0" style="width:600px;background:#FBF6EC;border:1px solid #E4D8C6;border-radius:6px;">
+
+  <!-- Masthead -->
+  <tr><td class="pad" style="padding:36px 44px 8px;font-family:Georgia,'Times New Roman',serif;color:#2B2420;">
+    <div style="font:11px/16px Arial,Helvetica,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#8A7B6E;">Mounjaro to Kilimanjaro · {{labels.diary}}</div>
+    <div class="h1" style="font-size:36px;line-height:42px;margin:14px 0 6px;font-style:italic;">{{labels.page}} {{issueNumber}}</div>
+    <div style="font:14px/20px Arial,Helvetica,sans-serif;color:#8A7B6E;">{{dateRange}} · {{place}}</div>
+    <div style="border-bottom:1px dashed #D6C6AE;margin-top:24px;"></div>
+  </td></tr>
+
+  <!-- Opening letter -->
+  <tr><td class="pad" style="padding:20px 44px 8px;font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:28px;color:#2B2420;">
+    <p style="margin:0 0 14px;">{{greeting}}</p>
+    {{#intro}}<p style="margin:0 0 14px;">{{.}}</p>{{/intro}}
+  </td></tr>
+
+  <!-- The log -->
+  <tr><td class="pad" style="padding:16px 44px 8px;">
+    <div style="font:11px/16px Arial,Helvetica,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#B4532A;margin-bottom:10px;">{{labels.log}}</div>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-family:Arial,Helvetica,sans-serif;color:#2B2420;">
+      <tr>
+        {{#weight}}
+        <td class="stack" width="50%" valign="top" style="padding:0 6px 12px 0;">
+          <div style="background:#F3EADB;border-radius:6px;padding:16px;">
+            <div style="font-size:12px;color:#8A7B6E;">{{labels.weight}}</div>
+            <div style="font:28px/34px Georgia,serif;margin:4px 0;">{{value}} <span style="font-size:15px;">kg</span></div>
+            <div style="font-size:13px;color:#3F6B4E;">{{week}} {{labels.thisWeek}} · {{total}} {{labels.sinceStart}}</div>
+          </div>
+        </td>
+        {{/weight}}
+        <td class="stack stack-gap" width="50%" valign="top" style="padding:0 0 12px 6px;">
+          <div style="background:#F3EADB;border-radius:6px;padding:16px;">
+            <div style="font-size:12px;color:#8A7B6E;">{{labels.mood}}</div>
+            <div style="font:28px/34px Georgia,serif;margin:4px 0;">{{mood.emoji}} <span style="font-size:17px;font-style:italic;">{{mood.word}}</span></div>
+            <div style="font-size:15px;letter-spacing:3px;color:#B4532A;">{{mood.dots}}</div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding:0;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-family:Arial,Helvetica,sans-serif;border-top:1px solid #E4D8C6;">
+            {{#stats}}
+            <tr>
+              <td style="padding:10px 0;border-bottom:1px solid #E4D8C6;font-size:14px;color:#8A7B6E;">{{label}}</td>
+              <td align="right" style="padding:10px 0;border-bottom:1px solid #E4D8C6;font-size:15px;color:#2B2420;">{{value}}</td>
+            </tr>
+            {{/stats}}
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td></tr>
+
+  <!-- Moved my body -->
+  <tr><td class="pad" style="padding:24px 44px 8px;">
+    <div style="font:11px/16px Arial,Helvetica,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#B4532A;margin-bottom:10px;">{{labels.moved}}</div>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-family:Arial,Helvetica,sans-serif;color:#2B2420;">
+      {{#exercises}}
+      <tr>
+        <td width="52" valign="top" style="padding:8px 0;font-size:12px;color:#8A7B6E;text-transform:uppercase;letter-spacing:1px;">{{day}}</td>
+        <td valign="top" style="padding:8px 0;font-size:15px;line-height:22px;">
+          <strong style="font-weight:600;">{{activity}}</strong> · {{duration}}
+          {{#note}}<div style="font:italic 14px/20px Georgia,serif;color:#5C5048;">{{note}}</div>{{/note}}
+        </td>
+      </tr>
+      {{/exercises}}
+      {{^exercises}}<tr><td style="font:italic 15px/22px Georgia,serif;color:#5C5048;">{{labels.restWeek}}</td></tr>{{/exercises}}
+    </table>
+  </td></tr>
+
+  <!-- Road to Roraima -->
+  <tr><td class="pad" style="padding:24px 44px 8px;">
+    <div style="background:#2F4A3A;border-radius:6px;padding:20px;font-family:Arial,Helvetica,sans-serif;color:#F3EADB;">
+      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#C9D8B6;">{{labels.road}}</div>
+      <div style="font:20px/28px Georgia,serif;margin:8px 0 12px;">{{road.done}} / {{road.goal}} km <span style="font-size:14px;color:#C9D8B6;">· {{road.percent}}%</span></div>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#4A6654;border-radius:4px;">
+        <tr><td width="{{road.percent}}%" style="background:#E9A15B;height:8px;border-radius:4px;font-size:0;line-height:0;">&nbsp;</td><td style="font-size:0;line-height:0;">&nbsp;</td></tr>
+      </table>
+      <div style="font-size:14px;line-height:21px;margin-top:12px;color:#E4ECD9;">{{labels.next}}: {{road.nextMilestone}}</div>
+    </div>
+  </td></tr>
+
+  <!-- Body notes -->
+  {{#bodyNotes}}
+  <tr><td class="pad" style="padding:24px 44px 8px;">
+    <div style="font:11px/16px Arial,Helvetica,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#B4532A;margin-bottom:10px;">{{labels.body}}</div>
+    <div style="font-family:Arial,Helvetica,sans-serif;">
+      {{#tags}}<span style="display:inline-block;margin:0 6px 8px 0;padding:5px 11px;border:1px solid #D6C6AE;border-radius:999px;font-size:13px;color:#5C5048;">{{.}}</span>{{/tags}}
+    </div>
+    {{#text}}<p style="margin:6px 0 0;font:16px/26px Georgia,serif;color:#2B2420;">{{text}}</p>{{/text}}
+  </td></tr>
+  {{/bodyNotes}}
+
+  <!-- Win / hard bit -->
+  <tr><td class="pad" style="padding:24px 44px 8px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="stack" width="50%" valign="top" style="padding-right:8px;">
+          <div style="border-left:3px solid #3F6B4E;padding:4px 0 4px 14px;">
+            <div style="font:11px/16px Arial,Helvetica,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#3F6B4E;">{{labels.win}}</div>
+            <div style="font:16px/25px Georgia,serif;color:#2B2420;margin-top:6px;">{{win}}</div>
+          </div>
+        </td>
+        <td class="stack stack-gap" width="50%" valign="top" style="padding-left:8px;">
+          <div style="border-left:3px solid #B4532A;padding:4px 0 4px 14px;">
+            <div style="font:11px/16px Arial,Helvetica,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#B4532A;">{{labels.hard}}</div>
+            <div style="font:16px/25px Georgia,serif;color:#2B2420;margin-top:6px;">{{hard}}</div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </td></tr>
+
+  <!-- Photo -->
+  {{#photo}}
+  <tr><td class="pad" style="padding:24px 44px 8px;">
+    <img src="{{src}}" alt="{{alt}}" width="512" style="display:block;width:100%;max-width:512px;height:auto;border-radius:6px;">
+    <div style="font:italic 13px/19px Georgia,serif;color:#8A7B6E;margin-top:8px;">{{caption}}</div>
+  </td></tr>
+  {{/photo}}
+
+  <!-- Sign-off -->
+  <tr><td class="pad" style="padding:24px 44px 36px;font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:28px;color:#2B2420;">
+    {{#closing}}<p style="margin:0 0 14px;">{{.}}</p>{{/closing}}
+    <p style="margin:18px 0 0;font-style:italic;">{{signoff}}<br>Luana</p>
+  </td></tr>
+
+</table>
+
+<!-- Footer -->
+<table role="presentation" class="wrap" width="600" cellpadding="0" cellspacing="0" style="width:600px;">
+  <tr><td class="pad" style="padding:20px 44px;font:12px/18px Arial,Helvetica,sans-serif;color:#8A7B6E;text-align:center;">
+    {{labels.disclaimer}}<br><br>
+    {{labels.why}} <a href="https://mounjarotokillimanjaro.com/" style="color:#8A7B6E;">mounjarotokillimanjaro.com</a><br>
+    <a href="{{unsubscribeUrl}}" style="color:#8A7B6E;">{{labels.unsubscribe}}</a>
+  </td></tr>
+</table>
+
+</td></tr>
+</table>
+</body>
+</html>
