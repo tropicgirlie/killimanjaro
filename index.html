@@ -1,0 +1,1336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mounjaro to Kilimanjaro: a very personal expedition back to myself</title>
+<meta name="description" content="Two years postpartum, navigating perimenopause and finding my way back to myself. I registered the domain for the rhyme. My mountain is Monte Roraima." />
+<link rel="canonical" href="https://mounjarotokillimanjaro.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Mounjaro to Kilimanjaro" />
+<meta property="og:description" content="I registered the domain for the rhyme. My mountain is Monte Roraima." />
+<meta property="og:url" content="https://mounjarotokillimanjaro.com/" />
+<meta property="og:image" content="https://mounjarotokillimanjaro.com/images/before.webp" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Figtree:wght@300;400;500;600&family=Cormorant+Upright:ital,wght@1,500&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='26' fill='%23c48a3a'/%3E%3C/svg%3E" />
+<style>
+  :root {
+    --paper:     oklch(0.93 0.030 82);
+    --paper-2:   oklch(0.90 0.038 78);
+    --paper-3:   oklch(0.87 0.045 76);
+    --ink:       oklch(0.24 0.045 60);
+    --ink-soft:  oklch(0.36 0.035 60);
+    --muted:     oklch(0.44 0.035 55);
+    --dim:       oklch(0.60 0.040 65);
+    --gold:      oklch(0.66 0.140 65);
+    --gold-deep: oklch(0.52 0.150 55);
+    --olive:     oklch(0.44 0.078 115);
+    --olive-dk:  oklch(0.32 0.065 118);
+    --leaf:      oklch(0.54 0.095 143);
+    --leaf-deep: oklch(0.35 0.072 145);
+    --sage-1:    oklch(0.93 0.034 137);
+    --sage-2:    oklch(0.89 0.052 139);
+    --sage-3:    oklch(0.955 0.022 136);
+    --sage-rule: oklch(0.75 0.045 139);
+    --rule:      oklch(0.72 0.040 70);
+
+    --display: "Italiana", "Didot", "Playfair Display", serif;
+    --script:  "Cormorant Upright", Georgia, serif;
+    --sans:    "Figtree", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    --wrap: 1240px;
+    --gutter: clamp(1.25rem, 4vw, 2.75rem);
+    --ease: cubic-bezier(0.22, 0.65, 0.2, 1);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: clamp(1rem, 0.94rem + 0.2vw, 1.0625rem);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(oklch(0.55 0.05 60 / 0.035) 1px, transparent 1px),
+      radial-gradient(oklch(0.55 0.05 60 / 0.025) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1px 2px;
+  }
+  ::selection { background: var(--gold); color: var(--paper); }
+  a { color: inherit; }
+
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: 0; margin: 0; text-wrap: balance; line-height: 1.02; color: var(--ink); }
+  h1 { font-size: clamp(2.6rem, 5.2vw + 1rem, 6rem); }
+  h2 { font-size: clamp(2.1rem, 2.4vw + 1rem, 3.4rem); }
+  h3 { font-size: clamp(1.3rem, 0.7vw + 1.05rem, 1.75rem); line-height: 1.15; }
+  p  { text-wrap: pretty; }
+
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+
+  /* ======== NAV ======== */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: blur(12px) saturate(1.1);
+    -webkit-backdrop-filter: blur(12px) saturate(1.1);
+    background: color-mix(in oklch, var(--paper) 78%, transparent);
+    border-bottom: 1px solid color-mix(in oklch, var(--rule) 45%, transparent);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.95rem var(--gutter);
+    max-width: var(--wrap); margin: 0 auto;
+    gap: 0.75rem;
+  }
+  .brand {
+    font-family: var(--display); font-size: 1.05rem;
+    color: var(--ink); text-decoration: none;
+    display: flex; align-items: center; gap: 0.6rem;
+    min-width: 0; white-space: nowrap;
+  }
+  .brand-sun { width: 20px; height: 20px; color: var(--gold); flex-shrink: 0; }
+  .brand-full { display: none; }
+  .brand-short { display: inline; letter-spacing: 0.01em; }
+  @media (min-width: 620px) {
+    .brand-full { display: inline; }
+    .brand-short { display: none; }
+  }
+  .nav-links { display: none; gap: 1.5rem; font-size: 0.94rem; font-family: var(--sans); }
+  .nav-links a {
+    text-decoration: none; color: var(--muted);
+    transition: color 0.3s var(--ease);
+  }
+  .nav-links a:hover { color: var(--ink); }
+  @media (min-width: 920px) { .nav-links { display: flex; } }
+  .nav-cta {
+    font-family: var(--sans); font-size: 0.86rem; font-weight: 500;
+    padding: 0.55rem 1.05rem; border-radius: 999px;
+    background: var(--ink); color: var(--paper); text-decoration: none;
+    transition: transform 0.25s var(--ease), background 0.25s var(--ease);
+    letter-spacing: 0.01em;
+  }
+  .nav-cta:hover { transform: translateY(-1px); background: var(--olive-dk); }
+
+  /* ======== HERO ======== */
+  .hero {
+    position: relative;
+    padding: clamp(2.5rem, 6vh, 5rem) 0 clamp(2.5rem, 6vh, 4rem);
+    overflow: hidden;
+  }
+  .hero-inner {
+    display: grid;
+    gap: clamp(2rem, 4vw, 3.5rem);
+    grid-template-columns: 1fr;
+    align-items: center;
+    max-width: var(--wrap);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  @media (min-width: 920px) {
+    .hero-inner { grid-template-columns: 1fr 1.05fr; gap: clamp(2rem, 4vw, 4.5rem); }
+  }
+  .hero-copy { order: 2; }
+  .hero-collage { order: 1; }
+  @media (min-width: 920px) {
+    .hero-copy { order: 1; }
+    .hero-collage { order: 2; }
+  }
+
+  .kicker {
+    font-family: var(--sans);
+    font-size: 0.74rem; font-weight: 500; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--olive-dk);
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .kicker::before, .kicker::after {
+    content: ""; width: 28px; height: 1px; background: var(--olive);
+  }
+
+  .mark {
+    font-family: var(--display);
+    font-size: clamp(2.6rem, 6.2vw, 6rem);
+    line-height: 0.92;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .mark .to {
+    font-family: var(--display); font-weight: 400;
+    color: var(--muted); font-size: 0.78em;
+  }
+
+  .slogan {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    margin-top: 1.5rem;
+    padding: 0.55rem 1rem 0.55rem 0.9rem;
+    border: 1px solid var(--rule); border-radius: 999px;
+    background: color-mix(in oklch, var(--paper) 55%, transparent);
+    font-family: var(--sans); font-size: 0.9rem; font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+  .slogan .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .slogan .kill {
+    color: var(--gold-deep);
+    position: relative; padding: 0 0.1em;
+    font-weight: 600;
+  }
+  .slogan .kill::after {
+    content: ""; position: absolute;
+    left: 0; right: 0; top: 54%; height: 2px;
+    background: var(--gold); transform: rotate(-3deg); opacity: 0.9;
+  }
+
+  .tagline {
+    margin-top: 1.5rem;
+    font-family: var(--sans); font-size: clamp(1.05rem, 0.35vw + 1rem, 1.18rem);
+    color: var(--muted); letter-spacing: 0.005em;
+    max-width: 36ch;
+  }
+
+  .hero-sub {
+    margin: 1.5rem 0 2rem;
+    max-width: 44ch;
+    font-family: var(--sans);
+    font-size: clamp(1.05rem, 0.4vw + 1rem, 1.2rem);
+    color: var(--ink-soft); line-height: 1.6;
+  }
+  .hero-sub strong { color: var(--ink); font-weight: 600; }
+
+  .hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.85rem 1.25rem; align-items: center; }
+  .btn-primary {
+    background: var(--ink); color: var(--paper);
+    font-family: var(--sans); font-weight: 500; font-size: 0.95rem;
+    padding: 0.95rem 1.5rem; border-radius: 999px;
+    text-decoration: none; letter-spacing: 0.01em;
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    transition: transform 0.28s var(--ease), background 0.28s var(--ease);
+    border: 0;
+  }
+  .btn-primary:hover { transform: translateY(-2px); background: var(--olive-dk); }
+  .btn-ghost {
+    color: var(--ink-soft); font-size: 0.95rem; font-weight: 400;
+    padding: 0.7rem 0.3rem; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    border-bottom: 1px solid var(--rule);
+    transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+  }
+  .btn-ghost:hover { color: var(--gold-deep); border-color: var(--gold); }
+
+  /* ======== COLLAGE VIDEO ======== */
+  .collage {
+    position: relative; aspect-ratio: 4/3;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow:
+      0 24px 60px -24px color-mix(in oklch, var(--ink) 40%, transparent),
+      0 6px 16px -8px color-mix(in oklch, var(--ink) 30%, transparent);
+    isolation: isolate;
+    background: color-mix(in oklch, var(--paper-3) 100%, transparent);
+  }
+  .collage::after {
+    content: ""; position: absolute; inset: 0; z-index: 3;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 50% 100%, color-mix(in oklch, var(--ink) 16%, transparent) 0%, transparent 60%),
+      radial-gradient(ellipse at 100% 0%, color-mix(in oklch, var(--gold) 12%, transparent) 0%, transparent 55%);
+    mix-blend-mode: multiply;
+    opacity: 0.55;
+  }
+  .collage video, .collage img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    display: block;
+  }
+  .collage-caption {
+    position: absolute; z-index: 4; left: 1rem; top: 1rem;
+    display: flex; align-items: center; gap: 0.55rem;
+    padding: 0.55rem 0.9rem; border-radius: 999px;
+    background: color-mix(in oklch, var(--paper) 82%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 500;
+    color: var(--ink); letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .collage-caption .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold);
+    animation: pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%      { transform: scale(1.4); opacity: 0.55; }
+  }
+
+  /* ======== STAT LINE ======== */
+  .statline {
+    display: grid; gap: 1.5rem 0;
+    grid-template-columns: 1fr;
+    margin-top: 2.75rem; padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+  }
+  @media (min-width: 640px) {
+    .statline { grid-template-columns: repeat(3, 1fr); gap: 0; }
+    .stat + .stat { border-left: 1px solid var(--rule); padding-left: clamp(1rem, 3vw, 1.75rem); }
+  }
+  .stat { padding-right: 1rem; }
+  .stat .n {
+    display: flex; align-items: baseline; gap: 0.35rem;
+    font-family: var(--display); font-size: clamp(1.9rem, 2.5vw, 2.6rem);
+    line-height: 1; color: var(--ink); font-weight: 400;
+  }
+  .stat .n small {
+    font-family: var(--sans); font-weight: 400;
+    color: var(--muted); font-size: 0.42em;
+    letter-spacing: 0.04em;
+  }
+  .stat .l {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+    margin-top: 0.55rem;
+  }
+
+  /* ======== DIVIDER ======== */
+  .orn {
+    display: flex; align-items: center; justify-content: center;
+    gap: 1.25rem; margin: 0 auto;
+    color: var(--gold);
+    opacity: 0.85;
+  }
+  .orn .rule { flex: 1; max-width: 120px; height: 1px; background: var(--rule); }
+  .orn svg { width: 28px; height: 28px; flex-shrink: 0; }
+
+  /* ======== SECTIONS ======== */
+  section { padding: clamp(5rem, 11vh, 8.5rem) 0; position: relative; }
+  .eyebrow {
+    font-family: var(--sans); font-size: 0.74rem; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--olive-dk);
+    display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.75rem;
+  }
+  .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--olive); }
+
+  /* The story moves from warm paper into a softer, living green. */
+  #roraima { background: linear-gradient(180deg, var(--paper) 0%, var(--sage-1) 48%, var(--sage-2) 100%); }
+  #roraima .facts, #roraima .fact { border-color: var(--sage-rule); }
+  #fauna { background: var(--sage-2); border-color: var(--sage-rule); }
+  #experiment { background: var(--sage-3); border-color: var(--sage-rule); }
+  #dispatches { background: var(--sage-1); border-color: var(--sage-rule); }
+  #join { background: var(--sage-3); }
+  body footer { background: var(--sage-2); border-color: var(--sage-rule); }
+  body footer .foot-mini { border-color: var(--sage-rule); }
+  #join::before {
+    background:
+      radial-gradient(ellipse at 50% 120%, color-mix(in oklch, var(--gold) 24%, transparent) 0%, transparent 55%),
+      radial-gradient(ellipse at 15% 15%, color-mix(in oklch, var(--leaf) 22%, transparent) 0%, transparent 46%);
+  }
+  :where(#roraima, #fauna, #prep, #experiment, #dispatches) .eyebrow { color: var(--leaf-deep); }
+  :where(#roraima, #fauna, #prep, #experiment, #dispatches) .eyebrow::before { background: var(--leaf); }
+
+  .prose { background: var(--paper-2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .prose-grid {
+    display: grid; gap: clamp(2rem, 5vw, 4rem);
+    grid-template-columns: 1fr; align-items: start;
+  }
+  @media (min-width: 900px) {
+    .prose-grid { grid-template-columns: 1fr 1.3fr; }
+  }
+  .prose-grid h2 { max-width: 16ch; }
+  .prose-copy p {
+    color: var(--ink-soft); font-size: clamp(1.05rem, 0.3vw + 1rem, 1.18rem);
+    line-height: 1.7; font-weight: 400;
+    max-width: 62ch;
+  }
+  .prose-copy p + p { margin-top: 1.1rem; }
+  .prose-copy strong { color: var(--ink); font-weight: 600; }
+  .prose-copy em {
+    font-family: var(--script); font-style: italic; font-weight: 500;
+    color: var(--ink); font-size: 1.03em;
+  }
+  .pullquote {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(1.5rem, 1.4vw + 1rem, 2.1rem); line-height: 1.22;
+    color: var(--ink);
+    padding: 1rem 0 1rem 1.75rem;
+    border-left: 2px solid var(--gold);
+    margin: 2rem 0;
+    max-width: 32ch;
+  }
+
+  /* lazy-way lanes */
+  .pair {
+    display: grid; gap: 1.75rem;
+    grid-template-columns: 1fr;
+    margin-top: 2.5rem;
+  }
+  @media (min-width: 720px) { .pair { grid-template-columns: 1fr 1fr; } }
+  .pair .lane {
+    padding: 1.6rem 1.75rem;
+    background: var(--paper-3);
+    border: 1px solid color-mix(in oklch, var(--rule) 70%, transparent);
+    border-radius: 6px;
+  }
+  .pair .lane h4 {
+    font-family: var(--display); font-size: 1.4rem; margin: 0 0 0.75rem; color: var(--ink);
+  }
+  .pair .lane p { color: var(--ink-soft); margin: 0; font-size: 0.98rem; line-height: 1.6; }
+  .pair .lane .tag {
+    display: inline-block; margin-bottom: 0.75rem;
+    font-family: var(--sans); font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* toolkit chips */
+  .toolkit {
+    display: flex; flex-wrap: wrap; gap: 0.55rem;
+    margin-top: 2rem; max-width: 56ch;
+  }
+  .toolkit .chip {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    background: var(--paper-3);
+    border: 1px solid color-mix(in oklch, var(--rule) 70%, transparent);
+    border-radius: 999px;
+    font-family: var(--sans); font-size: 0.85rem; font-weight: 500;
+    color: var(--ink-soft);
+  }
+  .toolkit .chip svg { width: 14px; height: 14px; color: var(--gold-deep); flex-shrink: 0; }
+  .toolkit .chip small {
+    color: var(--muted); font-size: 0.72rem; font-weight: 400;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+
+  /* ======== MOUNTAIN SECTION ======== */
+  .mountain-section {
+    position: relative; overflow: hidden;
+  }
+  .mountain-reveal { margin: 0; }
+  .mountain-art {
+    position: relative; margin-top: 3rem;
+    height: clamp(290px, 38vw, 500px);
+    overflow: hidden;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .mountain-art svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+  .mountain-art svg.mountain-mobile { display: none; }
+  .mountain-photo {
+    position: absolute; inset: 0; z-index: 1;
+    width: 100%; height: 100%; object-fit: cover; object-position: center 72%;
+    opacity: 0; transform: scale(1.025);
+    transition: opacity 1.15s var(--ease), transform 1.8s var(--ease);
+  }
+  .mountain-reveal.is-revealed .mountain-photo { opacity: 1; transform: none; }
+  .mountain-art .label {
+    position: absolute; z-index: 2; left: 50%; top: 1rem;
+    transform: translateX(-50%);
+    padding: 0.4rem 0.9rem; border-radius: 999px;
+    background: color-mix(in oklch, var(--paper) 88%, transparent);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink);
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .mountain-art .label::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold);
+  }
+  .reveal-toggle {
+    display: none; position: absolute; z-index: 3; right: var(--gutter); bottom: 1.25rem;
+    align-items: center; gap: .6rem; padding: .75rem 1.1rem;
+    border: 1px solid color-mix(in oklch, var(--paper) 70%, transparent);
+    border-radius: 999px; background: color-mix(in oklch, var(--paper) 90%, transparent);
+    color: var(--ink); font: 600 .82rem var(--sans); letter-spacing: .02em;
+    box-shadow: 0 5px 22px color-mix(in oklch, var(--ink) 15%, transparent);
+    cursor: pointer; backdrop-filter: blur(8px);
+  }
+  .js .reveal-toggle { display: inline-flex; }
+  .reveal-toggle:hover { background: var(--paper); }
+  .reveal-toggle svg { position: static; width: 16px; height: 16px; flex: none; }
+  .mountain-meta { display: flex; justify-content: space-between; gap: 1rem 3rem; padding-top: 1.35rem; }
+  .mountain-meta .film-label { margin-bottom: .35rem; }
+  .mountain-meta p { margin: 0; max-width: 72ch; color: var(--ink-soft); font-size: .96rem; line-height: 1.6; }
+  .mountain-meta .photo-credit { margin-top: .65rem; font-size: .75rem; color: var(--muted); }
+  .mountain-meta a { text-underline-offset: .18em; }
+  .mountain-noscript { display: block; width: min(100%, 1000px); height: auto; margin: 1rem auto 0; }
+  @media (max-width: 640px) {
+    .mountain-art { height: 340px; }
+    .mountain-art svg.mountain-desktop { display: none; }
+    .mountain-art svg.mountain-mobile { display: block; }
+    .reveal-toggle { right: 1rem; bottom: 1rem; font-size: .76rem; }
+  }
+
+  /* ======== DATA TABLE ======== */
+  .facts {
+    display: grid; gap: 0;
+    grid-template-columns: 1fr;
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  @media (min-width: 640px) {
+    .facts { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 920px) {
+    .facts { grid-template-columns: repeat(4, 1fr); }
+  }
+  .fact {
+    padding: 1.5rem 1.25rem 1.5rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  @media (min-width: 640px) {
+    .fact:nth-child(odd) { border-right: 1px solid var(--rule); padding-right: clamp(1rem, 2vw, 1.5rem); }
+    .fact:nth-child(even) { padding-left: clamp(1rem, 2vw, 1.5rem); }
+  }
+  @media (min-width: 920px) {
+    .fact { border-right: 1px solid var(--rule); padding: 1.5rem clamp(1rem, 2vw, 1.5rem); }
+    .fact:last-child { border-right: 0; padding-right: 0; }
+    .fact:first-child { padding-left: 0; }
+    .fact:nth-child(odd), .fact:nth-child(even) { padding-left: clamp(1rem, 2vw, 1.5rem); }
+    .fact:first-child { padding-left: 0; }
+  }
+  .fact .f-label {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+    margin-bottom: 0.55rem;
+  }
+  .fact .f-value {
+    font-family: var(--display); font-size: clamp(1.4rem, 1.4vw + 1rem, 1.95rem);
+    line-height: 1.1; color: var(--ink);
+  }
+  .fact .f-value small {
+    font-family: var(--sans); font-size: 0.5em; font-weight: 400;
+    color: var(--muted); margin-left: 0.3em; letter-spacing: 0.04em;
+  }
+  .fact .f-sub {
+    margin-top: 0.3rem;
+    font-family: var(--sans); font-size: 0.82rem; color: var(--muted);
+  }
+
+  /* ======== FAUNA / FLORA GRID ======== */
+  .fauna-grid {
+    display: grid; gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    margin-top: 2.5rem;
+  }
+  .species {
+    padding: 1.6rem 1.4rem;
+    background: var(--paper-3);
+    border: 1px solid color-mix(in oklch, var(--rule) 70%, transparent);
+    border-radius: 6px;
+    position: relative;
+  }
+  #fauna .species { background: var(--sage-3); border-color: var(--sage-rule); }
+  #fauna .species .kind:not(.gold) { background: var(--sage-1); color: var(--leaf-deep); border-color: var(--sage-rule); }
+  .species .kind {
+    display: inline-block; margin-bottom: 0.75rem;
+    padding: 0.2rem 0.6rem; border-radius: 999px;
+    background: color-mix(in oklch, var(--olive) 18%, var(--paper));
+    color: var(--olive-dk);
+    border: 1px solid color-mix(in oklch, var(--olive) 25%, transparent);
+    font-family: var(--sans); font-size: 0.66rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .species .kind.gold {
+    background: color-mix(in oklch, var(--gold) 20%, var(--paper));
+    color: var(--gold-deep);
+    border-color: color-mix(in oklch, var(--gold) 35%, transparent);
+  }
+  .species h3 {
+    font-family: var(--display); font-size: 1.4rem; margin: 0 0 0.25rem;
+  }
+  .species .latin {
+    font-family: var(--script); font-style: italic; font-weight: 500;
+    color: var(--muted); font-size: 0.95rem;
+    display: block; margin-bottom: 0.65rem;
+  }
+  .species p {
+    margin: 0; color: var(--ink-soft); font-size: 0.95rem; line-height: 1.55;
+  }
+
+  /* Preparation journal */
+  #prep { background: linear-gradient(165deg, var(--sage-2), var(--sage-1) 58%, var(--sage-3)); }
+  .prep-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.15rem, 2.5vw, 2rem); margin-top: 3rem; align-items: stretch; }
+  .prep-col { background: color-mix(in oklch, var(--paper) 88%, white); border: 1px solid color-mix(in oklch, var(--rule) 65%, transparent); border-radius: 8px; padding: clamp(1.5rem, 3vw, 2.3rem); box-shadow: 0 12px 30px -27px var(--ink-soft); }
+  #prep .prep-col { background: var(--sage-3); border-color: var(--sage-rule); }
+  .prep-head { display: flex; align-items: flex-start; gap: 1rem; padding-bottom: 1.6rem; border-bottom: 1px solid var(--rule); margin-bottom: 1.4rem; }
+  .prep-number { flex: 0 0 2.6rem; font-family: var(--display); color: var(--gold-deep); font-size: 1.55rem; line-height: 1.15; }
+  .prep-col h3 { font-size: clamp(1.7rem, 2.4vw, 2.15rem); margin: 0 0 .35rem; line-height: 1.1; }
+  .prep-sub { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.5; }
+  .prep-group + .prep-group { margin-top: 1.55rem; padding-top: 1.3rem; border-top: 1px solid color-mix(in oklch, var(--rule) 65%, transparent); }
+  .prep-group h4 { margin: 0 0 .55rem; font-family: var(--sans); font-size: .68rem; font-weight: 600; text-transform: uppercase; letter-spacing: .17em; color: var(--olive-dk); }
+  #prep .prep-group h4 { color: var(--leaf-deep); }
+  #prep .prep-group.next h4 { color: var(--gold-deep); }
+  .prep-group.next h4 { color: var(--gold-deep); }
+  .prep-col ul { list-style: none; padding: 0; margin: 0; }
+  .prep-col li { position: relative; padding: .75rem 0 .8rem 1.65rem; color: var(--ink-soft); font-size: .98rem; line-height: 1.55; }
+  .prep-col li + li { border-top: 1px solid color-mix(in oklch, var(--rule) 30%, transparent); }
+  .prep-col li::before { content: '·'; position: absolute; left: .35rem; top: .68rem; color: var(--gold-deep); font-size: 1.25rem; line-height: 1; }
+  .prep-col li.done::before { content: '✓'; left: .1rem; top: .85rem; color: var(--olive-dk); font-family: var(--sans); font-size: 1rem; font-weight: 600; }
+  #prep .prep-col li.done::before { color: var(--leaf-deep); }
+  .prep-col li small { display: block; margin-top: .4rem; font-size: .83rem; line-height: 1.5; color: var(--muted); }
+  @media (max-width: 699px) { .prep-grid { grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-top: 2rem; } }
+
+  /* Story films */
+  .story-film { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(240px, .55fr); gap: clamp(1.5rem, 3vw, 3rem); align-items: center; margin: 3.5rem 0 0; padding: 1.25rem 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .story-film.reverse { grid-template-columns: minmax(240px, .55fr) minmax(0, 1.45fr); }
+  .story-film.reverse .film-frame { order: 2; }
+  .film-frame { min-width: 0; aspect-ratio: 1110 / 836; overflow: hidden; background: var(--paper-3); border-radius: 5px; box-shadow: 0 18px 42px -28px var(--ink); }
+  .film-frame video { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .story-film figcaption { max-width: 32ch; }
+  .film-label { display: block; margin-bottom: 1rem; color: var(--olive-dk); font-size: .7rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
+  .story-film h3 { font-size: clamp(1.7rem, 2.3vw, 2.3rem); }
+  .story-film p { margin: 1rem 0 0; color: var(--ink-soft); font-size: .98rem; line-height: 1.65; }
+  @media (max-width: 760px) { .story-film, .story-film.reverse { grid-template-columns: minmax(0, 1fr); gap: 1.3rem; } .story-film.reverse .film-frame { order: 0; } .story-film figcaption { max-width: 55ch; } }
+
+  /* ======== DISPATCH ======== */
+  .dispatch { background: var(--paper-2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .dispatch-grid {
+    display: grid; gap: 1.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
+    margin-top: 2.5rem;
+  }
+  .card {
+    padding: 1.9rem 1.75rem 1.5rem;
+    background: var(--paper-3);
+    border: 1px solid color-mix(in oklch, var(--rule) 70%, transparent);
+    border-radius: 6px;
+    display: flex; flex-direction: column; gap: 0.9rem;
+    transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+    box-shadow: 0 2px 4px color-mix(in oklch, var(--ink) 6%, transparent);
+  }
+  #dispatches .card { background: var(--sage-3); border-color: var(--sage-rule); }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in oklch, var(--gold) 55%, var(--rule));
+    box-shadow:
+      0 20px 40px -12px color-mix(in oklch, var(--ink) 20%, transparent),
+      0 6px 12px -4px color-mix(in oklch, var(--ink) 10%, transparent);
+  }
+  .card .date {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+  }
+  .card h3 { font-family: var(--display); font-size: 1.4rem; color: var(--ink); line-height: 1.15; }
+  .card p { color: var(--ink-soft); font-size: 0.98rem; margin: 0; line-height: 1.55; }
+  .card .read {
+    margin-top: auto; padding-top: 0.5rem;
+    font-size: 0.85rem; color: var(--gold-deep); text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-weight: 500; letter-spacing: 0.02em;
+  }
+  .card .read svg { width: 14px; height: 14px; transition: transform 0.25s var(--ease); }
+  .card:hover .read svg { transform: translateX(4px); }
+
+  /* ======== JOIN ======== */
+  .join {
+    padding: clamp(5rem, 12vh, 9rem) 0;
+    position: relative; overflow: hidden;
+    background: var(--paper);
+  }
+  .join::before {
+    content: ""; position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse at 50% 120%, color-mix(in oklch, var(--gold) 28%, transparent) 0%, transparent 55%),
+      radial-gradient(ellipse at 15% 15%, color-mix(in oklch, var(--olive) 18%, transparent) 0%, transparent 45%);
+    opacity: 0.85;
+  }
+  .join-inner {
+    position: relative; z-index: 1;
+    max-width: 680px; text-align: center; margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  .join .orn { margin-bottom: 2rem; }
+  .join h2 { margin-bottom: 1.5rem; max-width: 20ch; margin-left: auto; margin-right: auto; }
+  .join p { color: var(--ink-soft); font-size: 1.1rem; margin: 0 auto 2.25rem; max-width: 52ch; line-height: 1.65; }
+  .mini {
+    margin-top: 1.25rem;
+    font-family: var(--sans); font-size: 0.78rem; font-weight: 400;
+    color: var(--muted); letter-spacing: 0.08em;
+  }
+
+  /* ======== FOOTER ======== */
+  footer {
+    padding: 3.5rem 0 2.5rem;
+    border-top: 1px solid var(--rule);
+    background: var(--paper-2);
+  }
+  .foot-inner {
+    display: grid; gap: 2rem;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  @media (min-width: 720px) { .foot-inner { grid-template-columns: 2fr 1fr 1fr; } }
+  .foot h4 {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+    margin: 0 0 1rem;
+  }
+  .foot ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
+  .foot a { color: var(--ink-soft); text-decoration: none; font-size: 0.98rem; transition: color 0.2s var(--ease); }
+  .foot a:hover { color: var(--gold-deep); }
+  .foot-wordmark {
+    font-family: var(--display); font-size: clamp(1.6rem, 1.2vw + 1rem, 2.1rem);
+    color: var(--ink); line-height: 1.15;
+  }
+  .foot-slogan {
+    margin-top: 1rem;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: var(--sans); font-size: 0.74rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .foot-slogan .kill {
+    color: var(--gold-deep); position: relative; padding: 0 0.15em;
+  }
+  .foot-slogan .kill::after {
+    content: ""; position: absolute; left: 0; right: 0; top: 54%; height: 2px;
+    background: var(--gold); transform: rotate(-3deg); opacity: 0.9;
+  }
+  .foot-disc {
+    margin-top: 1.5rem; font-family: var(--sans); font-size: 0.88rem;
+    color: var(--muted); max-width: 36ch; line-height: 1.55;
+  }
+  .foot-mini {
+    margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule);
+    font-family: var(--sans); font-size: 0.74rem; font-weight: 500;
+    color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;
+  }
+
+  /* ======== MOTION ======== */
+  .js .fade {
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 1s var(--ease), transform 1s var(--ease);
+  }
+  .fade.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .fade { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  [id] { scroll-margin-top: 6rem; }
+  :focus-visible { outline: 3px solid var(--gold-deep); outline-offset: 5px; }
+  .skip-link { position: fixed; top: -5rem; left: 1rem; z-index: 30; padding: .75rem 1rem; background: var(--ink); color: var(--paper); }
+  .skip-link:focus { top: 1rem; }
+  .hero-inner > *, .foot-inner > *, .prep-col { min-width: 0; }
+  .mountain-art .label { max-width: calc(100% - 2rem); width: max-content; font-size: clamp(.56rem, 1.5vw, .72rem); letter-spacing: .07em; }
+  .foot-wordmark { overflow-wrap: anywhere; }
+  .foot span { color: var(--muted); font-size: .9rem; }
+  .join p.mini { font-size: .82rem; margin-bottom: 0; letter-spacing: .06em; }
+
+  @media (max-width: 1099px) and (min-width: 920px) { .nav-links { gap: .65rem; font-size: .8rem; } }
+  @media (max-width: 380px) { .foot-wordmark { font-size: 1.35rem; } .slogan { font-size: .78rem; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } .js .fade { opacity: 1; transform: none; } }
+</style>
+</head>
+<body id="top">
+<a class="skip-link" href="#surgery">Skip to the story</a>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Mounjaro to Kilimanjaro, home">
+      <svg class="brand-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="4" fill="currentColor" />
+        <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <line x1="12" y1="2" x2="12" y2="4.5" />
+          <line x1="12" y1="19.5" x2="12" y2="22" />
+          <line x1="2" y1="12" x2="4.5" y2="12" />
+          <line x1="19.5" y1="12" x2="22" y2="12" />
+          <line x1="4.8" y1="4.8" x2="6.6" y2="6.6" />
+          <line x1="17.4" y1="17.4" x2="19.2" y2="19.2" />
+          <line x1="19.2" y1="4.8" x2="17.4" y2="6.6" />
+          <line x1="6.6" y1="17.4" x2="4.8" y2="19.2" />
+        </g>
+      </svg>
+      <span class="brand-full">Mounjaro to Kilimanjaro</span>
+      <span class="brand-short">M to K</span>
+    </a>
+    <div class="nav-links">
+      <a href="#surgery">Before this</a>
+      <a href="#lazy">The lazy question</a>
+      <a href="#mountain">The mountain</a>
+      <a href="#roraima">Roraima</a>
+      <a href="#prep">Preparing</a>
+      <a href="#dispatches">Letters</a>
+    </div>
+    <a href="#join" class="nav-cta">Walk with me</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+
+    <div class="hero-copy">
+      <span class="kicker fade">A very personal expedition&nbsp;·&nbsp;2026&ndash;2027</span>
+
+      <h1 class="mark fade">
+        Mounjaro<br />
+        <span class="to">to</span><br />
+        Kilimanjaro.
+      </h1>
+
+      <div class="slogan fade" aria-label="Slogan: Kill Mounjaro.">
+        <span class="dot" aria-hidden="true"></span>
+        <span><span class="kill">Kill</span> Mounjaro.</span>
+      </div>
+
+      <p class="tagline fade">A very personal expedition back to myself.</p>
+
+      <p class="hero-sub fade">
+        Two years postpartum, navigating perimenopause and finding my way back to myself. I registered the domain for the rhyme. My mountain is <strong>Monte Roraima</strong>.
+      </p>
+
+      <div class="hero-cta-row fade">
+        <a class="btn-primary" href="#join">
+          Walk with me
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a class="btn-ghost" href="#surgery">Read the whole story</a>
+      </div>
+
+      <div class="statline">
+        <div class="stat fade">
+          <span class="n">98<small>kg</small></span>
+          <div class="l">Where this starts</div>
+        </div>
+        <div class="stat fade">
+          <span class="n">75<small>kg</small></span>
+          <div class="l">Tentative destination</div>
+        </div>
+        <div class="stat fade">
+          <span class="n">2,810<small>m</small></span>
+          <div class="l">Monte Roraima</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-collage fade">
+      <div class="collage">
+        <video
+          src="images/morph.mp4"
+          poster="images/before.webp"
+          muted loop playsinline controls preload="metadata"
+          aria-label="Symbolic illustrated portrait changing over time, with a lotus, rainforest, Monte Roraima, sun and moon."
+        ></video>
+        <div class="collage-caption">
+          <span class="dot" aria-hidden="true"></span>
+          <span>An imagined journey</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="orn" aria-hidden="true">
+    <div class="rule"></div>
+    <svg viewBox="0 0 48 48" fill="currentColor">
+      <circle cx="24" cy="24" r="7"/>
+      <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none">
+        <line x1="24" y1="4" x2="24" y2="10"/>
+        <line x1="24" y1="38" x2="24" y2="44"/>
+        <line x1="4" y1="24" x2="10" y2="24"/>
+        <line x1="38" y1="24" x2="44" y2="24"/>
+        <line x1="9.5" y1="9.5" x2="14" y2="14"/>
+        <line x1="34" y1="34" x2="38.5" y2="38.5"/>
+        <line x1="38.5" y1="9.5" x2="34" y2="14"/>
+        <line x1="14" y1="34" x2="9.5" y2="38.5"/>
+      </g>
+    </svg>
+    <div class="rule"></div>
+  </div>
+</div>
+
+<section class="prose" id="surgery">
+  <div class="wrap">
+    <span class="eyebrow">The thing before this thing</span>
+    <div class="prose-grid">
+      <h2 class="fade">I thought I&rsquo;d already done the difficult bit.</h2>
+      <div class="prose-copy fade">
+        <p>I had the bariatric surgery. I lost the weight. I rebuilt my relationship with food, piece by awkward piece. Then I got pregnant, had a baby, and discovered that motherhood comes with many wonderful things.</p>
+        <p>Sleep deprivation. Hormonal chaos. A completely new body.</p>
+        <p>And approximately <strong>twenty kilos</strong> I hadn&rsquo;t invited to stay.</p>
+        <p>Now I&rsquo;m navigating postpartum life, perimenopause and a plan that includes Mounjaro. Life looked at everything I&rsquo;d already accomplished and asked if I had room for another challenge.</p>
+
+        <div class="toolkit" aria-label="The toolkit I already have">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>Oura&nbsp;<small>ring</small></span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="7" y="5" width="10" height="14" rx="2"/><circle cx="12" cy="12" r="3"/></svg>Garmin&nbsp;<small>watch</small></span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h18M6 7v10M18 7v10"/></svg>Reformer&nbsp;<small>plan</small></span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20l6-6 4 4 6-10"/></svg>Long&nbsp;walks</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="6" r="2"/><path d="M9 8c0 3 3 4 3 7 0 1-1 2-3 2M14 11l4-2"/></svg>Dancing&nbsp;<small>classes</small></span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 17c4-2 7-6 10-10 0 3 1 6 4 7-3 2-6 4-8 7-2-1-4-2-6-4z"/></svg>Birding</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lazy">
+  <div class="wrap">
+    <span class="eyebrow">A fair question</span>
+    <h2 class="fade" style="max-width: 22ch;">So, is this the lazy way?</h2>
+
+    <div class="prose-copy fade" style="max-width: 62ch; margin-top: 1.5rem;">
+      <p>We live in a world where, apparently, there&rsquo;s a pill for everything. Can&rsquo;t sleep? Pill. Can&rsquo;t concentrate? Pill. Can&rsquo;t lose weight? Well, there&rsquo;s an injection for that now. And society has opinions.</p>
+      <p>Some people call weight-loss medication cheating. Which is interesting, because nobody ever explained who was refereeing this competition.</p>
+    </div>
+
+    <div class="pair">
+      <div class="lane fade">
+        <span class="tag">The narrative I&rsquo;m rejecting</span>
+        <h4>&ldquo;It&rsquo;s cheating.&rdquo;</h4>
+        <p>The one where willpower is a moral category, perimenopause is a rumour, and a woman&rsquo;s body is supposed to do what she asks it to on the first try. I&rsquo;m not interested.</p>
+      </div>
+      <div class="lane fade">
+        <span class="tag">The one I&rsquo;m living</span>
+        <h4>Medicine, plus the work.</h4>
+        <p>Mounjaro is part of the plan I&rsquo;m discussing with my care team. I also want to get stronger, move better, enjoy exercise again, and, honestly, have my old clothes fit. Sue me.</p>
+      </div>
+    </div>
+
+    <p class="pullquote fade">I don&rsquo;t want to build my whole identity around an injection. I want to build it around the woman using it.</p>
+  </div>
+</section>
+
+<section class="mountain-section" id="mountain">
+  <div class="wrap">
+    <span class="eyebrow">The mountain</span>
+    <h2 class="fade" style="max-width: 26ch;">The rhyme started it. Kilimanjaro stays on the list. Roraima is my mountain.</h2>
+
+    <div class="prose-copy fade" style="margin-top: 1.5rem; max-width: 62ch;">
+      <p>I registered <strong>mounjarotokillimanjaro.com</strong> because the words rhyme. It was a good name for a beginning, even as motherhood and perimenopause changed what I wanted from a trip.</p>
+      <p>Kilimanjaro is still on my travel list. Maybe a safari, a small hike nearby and a coffee with the mountain in front of me. I am not making a plan to climb it. The rhyme has already done its job.</p>
+    </div>
+
+    <figure class="story-film fade">
+      <div class="film-frame"><video src="images/kilimanjaro-coffee.mp4" poster="images/kilimanjaro-coffee.jpg" controls playsinline preload="metadata" aria-label="Illustrated lotus portrait shifts to a coffee moment in front of Kilimanjaro.">Your browser does not support this video.</video></div>
+      <figcaption><span class="film-label">Chapter two · Kilimanjaro</span><h3>Maybe just a coffee with the mountain.</h3><p>A place I would still love to visit. A safari and a small nearby walk would be enough of an adventure.</p></figcaption>
+    </figure>
+
+    <p class="pullquote fade" style="max-width: 46ch;">Mounjaro to Roraima does absolutely nothing for the rhyme. Roraima is still where I want to go.</p>
+
+    <div class="prose-copy fade" style="margin-top: 1.5rem; max-width: 62ch;">
+      <p>The mountain I want to walk is <strong>Monte Roraima.</strong> I want the birds, the forest, the strange plants and time to notice them. Yes, I want to celebrate losing weight. I also want a trip where I can hear my own thoughts.</p>
+    </div>
+  </div>
+</section>
+
+<section id="roraima">
+  <div class="wrap">
+    <span class="eyebrow">The real mountain</span>
+    <h2 class="fade" style="max-width: 22ch;">Monte Roraima. The tepui at the triple border.</h2>
+
+    <div class="prose-copy fade" style="margin-top: 1.5rem; max-width: 62ch;">
+      <p>I&rsquo;m too Latina to ignore Roraima. It&rsquo;s the flat-topped giant where Brazil, Venezuela and Guyana meet. A landscape of sandstone, cloud and forest. And, more quietly, it reminds me of walks on family farms when I was small, when the land felt vast and loud with birds.</p>
+    </div>
+
+    <div class="facts">
+      <div class="fact fade">
+        <div class="f-label">Height</div>
+        <div class="f-value">2,810<small>m</small></div>
+        <div class="f-sub">9,220 ft. Highest of the Pacaraima range.</div>
+      </div>
+      <div class="fact fade">
+        <div class="f-label">Where</div>
+        <div class="f-value">Triple border</div>
+        <div class="f-sub">Brazil, Venezuela &amp; Guyana meet on the summit.</div>
+      </div>
+      <div class="fact fade">
+        <div class="f-label">Landscape</div>
+        <div class="f-value">Sandstone</div>
+        <div class="f-sub">A flat-topped tepui above the surrounding forest.</div>
+      </div>
+      <div class="fact fade">
+        <div class="f-label">My route</div>
+        <div class="f-value">Still to plan</div>
+        <div class="f-sub">Itinerary and access to confirm with a local guide.</div>
+      </div>
+    </div>
+  </div>
+
+  <figure class="mountain-reveal fade">
+  <div class="mountain-art">
+    <svg class="mountain-desktop" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Illustration of Monte Roraima above cloud and forest, with a gold sun and birds.">
+      <defs>
+        <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="oklch(0.93 0.030 82)" />
+          <stop offset="1" stop-color="oklch(0.86 0.045 76)" />
+        </linearGradient>
+        <linearGradient id="tepui" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="oklch(0.38 0.045 240)" />
+          <stop offset="1" stop-color="oklch(0.26 0.05 230)" />
+        </linearGradient>
+        <linearGradient id="tepui2" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="oklch(0.44 0.04 240)" stop-opacity="0.75" />
+          <stop offset="1" stop-color="oklch(0.3 0.04 230)" stop-opacity="0.85" />
+        </linearGradient>
+        <linearGradient id="forest" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="oklch(0.42 0.08 115)" />
+          <stop offset="1" stop-color="oklch(0.3 0.07 115)" />
+        </linearGradient>
+        <linearGradient id="cloud" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="oklch(0.97 0.004 90)" stop-opacity="0.9" />
+          <stop offset="1" stop-color="oklch(0.9 0.015 90)" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+      <rect x="0" y="0" width="1600" height="420" fill="url(#sky)"/>
+
+      <!-- small sun, upper left -->
+      <g transform="translate(220 110)" opacity="0.6">
+        <circle r="32" fill="oklch(0.78 0.14 68)" />
+        <g stroke="oklch(0.72 0.14 65)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.85">
+          <line x1="0" y1="-48" x2="0" y2="-60"/>
+          <line x1="0" y1="48"  x2="0" y2="60"/>
+          <line x1="-48" y1="0" x2="-60" y2="0"/>
+          <line x1="48" y1="0"  x2="60" y2="0"/>
+          <line x1="-34" y1="-34" x2="-43" y2="-43"/>
+          <line x1="34" y1="34"   x2="43" y2="43"/>
+          <line x1="34" y1="-34"  x2="43" y2="-43"/>
+          <line x1="-34" y1="34"  x2="43" y2="-43"/>
+        </g>
+      </g>
+
+      <!-- a second, smaller tepui in the background right -->
+      <path fill="url(#tepui2)" d="
+        M1100,420 L1100,260
+        L1140,250 L1160,220 L1360,210 L1400,225 L1440,250 L1480,260 L1520,280 L1600,290
+        L1600,420 Z
+      " />
+
+      <!-- Roraima: main tepui, flat top, sheer cliffs -->
+      <path fill="url(#tepui)" d="
+        M0,420 L0,340
+        L120,335 L220,330 L340,320 L420,260
+        L460,120
+        L470,95 L490,88 L1080,88 L1100,95 L1110,120
+        L1120,180 L1160,260 L1200,310 L1280,330 L1400,340 L1520,345 L1600,345
+        L1600,420 Z
+      " />
+
+      <!-- cloud belt below the tepui -->
+      <path fill="url(#cloud)" d="
+        M0,290 L120,280 L260,300 L420,290 L560,310 L700,300 L840,320 L980,305 L1120,315 L1260,300 L1400,315 L1540,305 L1600,310
+        L1600,350 L0,350 Z
+      " opacity="0.75"/>
+
+      <!-- forest skirt -->
+      <path fill="url(#forest)" opacity="0.92" d="
+        M0,420 L0,380
+        L80,374 L180,370 L280,366 L380,362 L480,358 L580,354 L700,352 L820,354 L940,358 L1060,362 L1180,366 L1300,372 L1420,378 L1520,382 L1600,384
+        L1600,420 Z
+      "/>
+
+      <!-- birds -->
+      <g fill="none" stroke="oklch(0.28 0.05 60)" stroke-width="2" stroke-linecap="round" opacity="0.65">
+        <path d="M680 160 q 8 -6 16 0 q 8 -6 16 0"/>
+        <path d="M740 180 q 6 -5 12 0 q 6 -5 12 0"/>
+        <path d="M900 140 q 8 -6 16 0 q 8 -6 16 0"/>
+        <path d="M980 180 q 6 -5 12 0 q 6 -5 12 0"/>
+      </g>
+
+      <!-- tiny trees -->
+      <g fill="oklch(0.25 0.06 118)" opacity="0.8">
+        <circle cx="120" cy="378" r="4"/><circle cx="260" cy="372" r="5"/><circle cx="380" cy="368" r="4"/>
+        <circle cx="520" cy="360" r="5"/><circle cx="680" cy="356" r="4"/><circle cx="860" cy="360" r="5"/>
+        <circle cx="1020" cy="364" r="4"/><circle cx="1200" cy="372" r="5"/><circle cx="1380" cy="378" r="4"/>
+      </g>
+    </svg>
+    <svg class="mountain-mobile" viewBox="0 0 390 340" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of flat-topped Monte Roraima above cloud and forest, with a gold sun.">
+      <defs>
+        <linearGradient id="mobile-sky" x2="0" y2="1"><stop stop-color="oklch(0.93 0.030 82)"/><stop offset="1" stop-color="oklch(0.83 0.045 76)"/></linearGradient>
+        <linearGradient id="mobile-tepui" x2="0" y2="1"><stop stop-color="oklch(0.38 0.045 240)"/><stop offset="1" stop-color="oklch(0.26 0.05 230)"/></linearGradient>
+        <linearGradient id="mobile-forest" x2="0" y2="1"><stop stop-color="oklch(0.42 0.08 115)"/><stop offset="1" stop-color="oklch(0.3 0.07 115)"/></linearGradient>
+      </defs>
+      <rect width="390" height="340" fill="url(#mobile-sky)"/>
+      <circle cx="66" cy="76" r="26" fill="oklch(0.78 0.14 68)" opacity=".72"/>
+      <path d="M270 340V219l34-8 16-34 70 4v159Z" fill="oklch(0.41 0.04 240)" opacity=".55"/>
+      <path d="M0 340v-51l46-8 30-49 30-110 8-8 172-3 9 9 30 111 34 51 31 7v51Z" fill="url(#mobile-tepui)"/>
+      <path d="M0 244q51-15 104 0t101 2q52-9 96 4t89-3v47H0Z" fill="oklch(0.96 0.01 90)" opacity=".47"/>
+      <path d="M0 340v-43q87-14 194-12t196 14v41Z" fill="url(#mobile-forest)"/>
+      <g fill="none" stroke="oklch(0.28 0.05 60)" stroke-width="1.7" stroke-linecap="round" opacity=".55"><path d="M170 158q6-4 12 0 6-4 12 0"/><path d="M223 179q5-4 10 0 5-4 10 0"/></g>
+    </svg>
+    <img class="mountain-photo" id="roraima-photograph" src="images/roraima-sunrise.jpg" alt="Monte Roraima rising through cloud at sunrise, seen from base camp." aria-hidden="true" loading="lazy" decoding="async" />
+    <div class="label">Monte Roraima · 2,810 m · BR &middot; VE &middot; GY</div>
+    <button class="reveal-toggle" type="button" aria-controls="roraima-photograph" aria-pressed="false">
+      <span>See the real mountain</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>
+    </button>
+  </div>
+  <noscript><img class="mountain-noscript" src="images/roraima-sunrise.jpg" alt="Monte Roraima rising through cloud at sunrise, seen from base camp." /></noscript>
+  <figcaption class="wrap mountain-meta">
+    <div>
+      <span class="film-label">The place behind the picture</span>
+      <p>First, an illustration. Then, the mountain itself. The Venezuelan tepui landscapes also helped shape the imagined world of <a href="https://www.pixar.com/upfilm"><em>Up</em></a>.</p>
+      <p class="photo-credit">Photograph by <a href="https://commons.wikimedia.org/wiki/File:Nascer_do_sol_no_Monte_Roraima.jpg">Mauricio Campello</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Display cropped to fit.</p>
+    </div>
+  </figcaption>
+  </figure>
+</section>
+
+<section class="prose" id="fauna">
+  <div class="wrap">
+    <span class="eyebrow">Fauna, flora &amp; birds</span>
+    <div class="prose-grid">
+      <h2 class="fade">A field guide for paying attention.</h2>
+      <div class="prose-copy fade">
+        <p>Roraima is part of the <strong>Pantepui</strong>, a region of tabletop mountains and varied habitats. I want to learn about the birds and plants before I go, then ask a local guide what the chosen route may actually offer.</p>
+        <p>I want to walk slowly and pay attention. This is a reading list, not a promise of sightings.</p>
+      </div>
+    </div>
+
+    <div class="fauna-grid">
+      <article class="species fade">
+        <span class="kind gold">Bird &middot; forest</span>
+        <h3>Roraiman Antbird</h3>
+        <span class="latin">Myrmelastes saturatus</span>
+        <p>BirdLife records this forest bird in Guyana and Venezuela. Its habitat may not overlap the route I eventually take.</p>
+      </article>
+
+      <article class="species fade">
+        <span class="kind gold">Bird</span>
+        <h3>Tepui Swift</h3>
+        <span class="latin">Streptoprocne phelpsi</span>
+        <p>One of the birds I want to read about while planning. Whether I see it will depend on the route and conditions.</p>
+      </article>
+
+      <article class="species fade">
+        <span class="kind gold">Bird</span>
+        <h3>Guianan Cock-of-the-rock</h3>
+        <span class="latin">Rupicola rupicola</span>
+        <p>A vivid bird of the wider region. I will check likely habitat with a local guide before adding it to a route list.</p>
+      </article>
+
+      <article class="species fade">
+        <span class="kind">Flora &middot; carnivorous</span>
+        <h3>Sun pitcher</h3>
+        <span class="latin">Heliamphora nutans</span>
+        <p>A carnivorous plant associated with the tepui landscape. One to learn about and observe without disturbing it.</p>
+      </article>
+
+      <article class="species fade">
+        <span class="kind">Flora</span>
+        <h3>Sundew</h3>
+        <span class="latin">Drosera roraimae</span>
+        <p>A sundew named for Roraima. I would love to notice the smaller life around the trail as well as the view.</p>
+      </article>
+
+      <article class="species fade">
+        <span class="kind">Fauna &middot; endemic</span>
+        <h3>Roraima bush toad</h3>
+        <span class="latin">Oreophrynella quelchii</span>
+        <p>A small, dark toad associated with the high tepuis. One to look for carefully, without handling or disturbing it.</p>
+      </article>
+    </div>
+    <p class="mini">Field-guide references: <a href="https://datazone.birdlife.org/species/factsheet/roraiman-antbird-myrmelastes-saturatus">BirdLife</a> · <a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:790110-1">Kew</a> · <a href="https://amphibiansoftheworld.amnh.org/Amphibia/Anura/Bufonidae/Oreophrynella/Oreophrynella-quelchii">American Museum of Natural History</a>. Species and sightings depend on route, habitat and season.</p>
+  </div>
+</section>
+
+<section id="prep">
+  <div class="wrap">
+    <span class="eyebrow">What I actually need to do</span>
+    <h2 class="fade" style="max-width: 22ch;">Preparing for Roraima, from where I am now.</h2>
+
+    <div class="prose-copy fade" style="margin-top: 1.25rem; max-width: 62ch;">
+      <p>The route I am considering is a multi-day trek with steep climbs and changeable weather. I still need to confirm the itinerary with a local guide. Preparing also means making room for childcare, rest and the invisible work that usually travels with me.</p>
+    </div>
+
+    <div class="prep-grid">
+      <article class="prep-col fade">
+        <div class="prep-head"><span class="prep-number" aria-hidden="true">01</span><div><h3>Body &amp; energy</h3><p class="prep-sub">The routines that make the walk possible.</p></div></div>
+        <div class="prep-group"><h4>Already doing</h4><ul>
+          <li class="done">Walking regularly and using Garmin to keep track.<small>Oura helps me pay attention to sleep and recovery.</small></li>
+        </ul></div>
+        <div class="prep-group next"><h4>Next</h4><ul>
+          <li>Plan for three reformer Pilates sessions each week.</li>
+          <li>Try longer walks and gentle pack carries on trails near Dublin.<small>Increase distance and load gradually.</small></li>
+          <li>Discuss strength work with my care team, then find a realistic place for it alongside dancing.</li>
+        </ul></div>
+      </article>
+
+      <article class="prep-col fade">
+        <div class="prep-head"><span class="prep-number" aria-hidden="true">02</span><div><h3>Making room to go</h3><p class="prep-sub">Dates, people and the practical pieces.</p></div></div>
+        <div class="prep-group next"><h4>Next</h4><ul>
+          <li>Choose a travel window and route with a local guide.<small>Confirm trail conditions, access and pace before booking.</small></li>
+          <li>Make a childcare plan that gives me real room to be away.<small>This is central to the trip, not a footnote.</small></li>
+          <li>Check current entry requirements, community fees and suitable travel insurance.</li>
+          <li>Leave margin in the itinerary for weather, rest and the unexpected.</li>
+        </ul></div>
+      </article>
+
+      <article class="prep-col fade">
+        <div class="prep-head"><span class="prep-number" aria-hidden="true">03</span><div><h3>What comes with me</h3><p class="prep-sub">Useful, comfortable and worth carrying.</p></div></div>
+        <div class="prep-group next"><h4>Next</h4><ul>
+          <li>Find boots that fit well, then wear them on local walks.</li>
+          <li>Agree a practical pack list with the guide.<small>Pack size and shared equipment depend on the itinerary.</small></li>
+          <li>Plan for rain and cool conditions with a shell and dry storage.</li>
+          <li>Check the essentials: headlamp, water treatment, sun protection and any personal medication.</li>
+        </ul></div>
+      </article>
+
+      <article class="prep-col fade">
+        <div class="prep-head"><span class="prep-number" aria-hidden="true">04</span><div><h3>The slow bit</h3><p class="prep-sub">Leave space for the reason I am going.</p></div></div>
+        <div class="prep-group next"><h4>Next</h4><ul>
+          <li>Carry binoculars that are comfortable all day.</li>
+          <li>Download offline maps and bird references for the route.<small>Build a realistic list with local advice, without expecting sightings.</small></li>
+          <li>Choose a pace with time to stop, look and breathe.</li>
+          <li>Let this be a celebration and a rest from carrying everything.</li>
+        </ul></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="prose" id="experiment">
+  <div class="wrap">
+    <span class="eyebrow">The experiment</span>
+    <div class="prose-grid">
+      <h2 class="fade">A woman, a mountain, a prescription, and a rather ambitious coffee break.</h2>
+      <div class="prose-copy fade">
+        <p>I&rsquo;m calling the project <strong>Kill Mounjaro</strong>. The name makes me laugh. The plan is to explore what medical care, movement, food and time in nature might make possible for me.</p>
+        <p>My starting point is <strong>98&nbsp;kg</strong>. My tentative destination is <strong>75&nbsp;kg</strong>. The summit I&rsquo;m aiming at is <strong>Roraima</strong>. The coffee at the base of Kilimanjaro is, let&rsquo;s say, a bonus chapter.</p>
+        <p>I hope to document progress, ridiculous moments, things that work and things that don&rsquo;t. No miracle transformations. No pretending motherhood ends after six weeks. No before-and-after photos designed to make the woman in the &ldquo;before&rdquo; look miserable.</p>
+        <p>Motherhood comes with a running list in my head. The planning, the remembering, the things nobody notices until they haven&rsquo;t been done. I can organise a trip without turning it into another test of how much I can carry.</p>
+        <p>Roraima is a celebration of the weight I hope to lose, and a chance to put some other weight down for a while. Walk. Watch birds. Be close to nature. Remember what I enjoy when nobody needs anything from me.</p>
+        <p>When there is a real week to write about, I&rsquo;ll write about that.</p>
+      </div>
+    </div>
+
+    <figure class="story-film reverse fade">
+      <div class="film-frame"><video src="images/return-to-lotus.mp4" poster="images/return-to-lotus.jpg" controls playsinline preload="metadata" aria-label="Illustrated portrait surrounded by symbols of daily tasks, returning to a quiet lotus scene.">Your browser does not support this video.</video></div>
+      <figcaption><span class="film-label">Chapter three · Roraima</span><h3>Some of the load stays at home.</h3><p>The calendars, remembering and invisible labour are real. I want this walk to leave space for myself, not become another test of what I can carry.</p></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="dispatch" id="dispatches">
+  <div class="wrap">
+    <span class="eyebrow">Letters from the trail</span>
+    <h2 class="fade" style="max-width: 24ch;">Topics for letters I hope to write.</h2>
+
+    <div class="dispatch-grid">
+      <article class="card fade"><span class="date">Upcoming topic · Training</span><h3>Making space for longer walks</h3><p>Walking near Dublin, my plan for three weekly reformer sessions and the time I actually have.</p><a class="read" href="#prep">See the preparation plan ↗</a></article>
+      <article class="card fade"><span class="date">Upcoming topic · The experiment</span><h3>Starting without a miracle story</h3><p>The questions I want to ask as I make decisions about Mounjaro with my care team.</p><a class="read" href="#experiment">About the experiment ↗</a></article>
+      <article class="card fade"><span class="date">Upcoming topic · Birding</span><h3>Birds worth slowing down for</h3><p>Learning about the wider Guayana highlands before making a route-specific list with a local guide.</p><a class="read" href="#fauna">Meet the wildlife ↗</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <div class="join-inner">
+    <div class="orn" aria-hidden="true">
+      <div class="rule"></div>
+      <svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true">
+        <path d="M30 6a18 18 0 1 0 12 30A14 14 0 0 1 30 6z"/>
+      </svg>
+      <div class="rule"></div>
+    </div>
+    <span class="eyebrow fade" style="justify-content:center;">A letter, eventually</span>
+    <h2 class="fade">Letters coming soon.</h2>
+    <p class="fade">I would like to share the walks, the questions, the birds and the ordinary days as they happen. There is no mailing list yet, so there is nothing to sign up for today.</p>
+    <p class="mini fade">Sign-up opens when a mailing service is connected.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="foot-wordmark">Mounjaro to Kilimanjaro</div>
+      <div class="foot-slogan"><span class="kill">Kill</span>&nbsp;Mounjaro.</div>
+      <div class="foot-disc">
+        Domain for the rhyme. Mountain is Monte Roraima. A personal log by a Brazilian woman with a prescription and a sense of humour. Not medical advice. Please speak with your doctor about treatment decisions.
+      </div>
+    </div>
+    <div class="foot">
+      <h4>The log</h4>
+      <ul>
+        <li><a href="#surgery">Before this</a></li>
+        <li><a href="#lazy">The lazy question</a></li>
+        <li><a href="#mountain">The mountain</a></li>
+        <li><a href="#roraima">Roraima</a></li>
+        <li><a href="#fauna">Fauna &amp; flora</a></li>
+        <li><a href="#prep">Preparing</a></li>
+      </ul>
+    </div>
+    <div class="foot">
+      <h4>Elsewhere</h4>
+      <ul>
+        <li><span>Instagram · coming soon</span></li>
+        <li><span>Strava · coming soon</span></li>
+        <li><span>RSS · coming soon</span></li>
+        <li><span>Email · coming soon</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-mini">
+    <div>© 2026 mounjarotokillimanjaro.com</div>
+    <div>Preparing for the first chapter</div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    document.documentElement.classList.add("js");
+    var reveal = document.querySelector('.mountain-reveal');
+    var revealButton = reveal.querySelector('.reveal-toggle');
+    var revealPhoto = reveal.querySelector('.mountain-photo');
+    var revealDrawings = reveal.querySelectorAll('.mountain-art svg');
+    revealButton.addEventListener('click', function () {
+      var showingPhoto = reveal.classList.toggle('is-revealed');
+      revealButton.setAttribute('aria-pressed', String(showingPhoto));
+      revealButton.querySelector('span').textContent = showingPhoto ? 'Back to illustration' : 'See the real mountain';
+      revealPhoto.setAttribute('aria-hidden', String(!showingPhoto));
+      revealDrawings.forEach(function (drawing) { drawing.setAttribute('aria-hidden', String(showingPhoto)); });
+    });
+    var els = document.querySelectorAll('.fade');
+    var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var heroVideo = document.querySelector('.collage video');
+    function syncHeroMotion() {
+      if (motion.matches) heroVideo.pause();
+      else heroVideo.play().catch(function () {});
+    }
+    syncHeroMotion();
+    if (motion.addEventListener) motion.addEventListener('change', syncHeroMotion);
+    if (!('IntersectionObserver' in window) || motion.matches) {
+      els.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var vh = window.innerHeight;
+    els.forEach(function (el, i) {
+      var r = el.getBoundingClientRect();
+      if (r.top < vh * 0.98) {
+        var delay = (i % 6) * 110;
+        setTimeout(function () { el.classList.add('in'); }, delay);
+      }
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var delay = parseFloat(el.dataset.delay || '0');
+          setTimeout(function () { el.classList.add('in'); }, delay);
+          io.unobserve(el);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(function (el, i) {
+      el.dataset.delay = (i % 4) * 90;
+      io.observe(el);
+    });
+  }());
+</script>
+
+</body>
+</html>
