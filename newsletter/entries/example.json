@@ -1,0 +1,78 @@
+{
+  "subject": "Page 1 · The first step is the cheapest",
+  "preheader": "Week one: a new dose, a wet walk and a mountain on the fridge.",
+  "issueNumber": 1,
+  "dateRange": "17–23 November 2026",
+  "place": "Dublin",
+  "headline": "The first step",
+  "headlineHighlight": "is the cheapest",
+  "hero": {
+    "src": "hero.jpg",
+    "alt": "Collage: Luana meditating in a giant lotus, Monte Roraima behind her, a golden sun and crescent moon"
+  },
+  "greeting": "Dear you,",
+  "intro": [
+    "EXAMPLE TEXT. Replace with your own. This week I stuck a photo of Monte Roraima on the fridge. Not as motivation exactly, more as a question I have to walk past every morning.",
+    "It rained four days out of seven, so most of my training was in a raincoat with a buggy."
+  ],
+  "showWeight": true,
+  "weight": {
+    "kg": 84.2,
+    "lastWeekKg": 85.0,
+    "startKg": 86.1
+  },
+  "mood": {
+    "score": 3,
+    "emoji": "🌦️",
+    "word": "Changeable"
+  },
+  "energy": "Low early on, better by Friday",
+  "sleepHours": 6.1,
+  "steps": 7420,
+  "water": "1.8 L/day",
+  "dose": "2.5 mg · Sunday",
+  "exercises": [
+    {
+      "day": "Mon",
+      "activity": "Walk with the buggy",
+      "duration": "40 min"
+    },
+    {
+      "day": "Wed",
+      "activity": "Strength, legs and core",
+      "duration": "25 min",
+      "note": "Squats felt wobbly. Slow is fine."
+    },
+    {
+      "day": "Sat",
+      "activity": "Hill walk, Howth",
+      "duration": "1 h 50",
+      "note": "First time with a loaded backpack."
+    }
+  ],
+  "road": {
+    "done": 12.5,
+    "goal": 34.5,
+    "nextMilestone": "A 10 km walk with 400 m of climbing"
+  },
+  "bodyNotes": {
+    "tags": [
+      "Mild nausea, day 2",
+      "Less hungry in the evenings",
+      "Craving salty food"
+    ],
+    "text": "Eating smaller portions earlier in the day helped."
+  },
+  "win": "Got out on the wet Saturday anyway.",
+  "hard": "Tuesday. Everything felt heavy.",
+  "photo": null,
+  "prompt": {
+    "question": "Everyone has a Roraima. What's yours?",
+    "starter": "My mountain is"
+  },
+  "closing": [
+    "Next week: the first 10 km. Wish me dry socks."
+  ],
+  "signoff": "Até a próxima,",
+  "unsubscribeUrl": "{{unsubscribe_url}}"
+}

@@ -432,6 +432,7 @@
     transition: opacity 1.15s var(--ease), transform 1.8s var(--ease);
   }
   .mountain-reveal.is-revealed .mountain-photo { opacity: 1; transform: none; }
+  .mountain-reveal.is-revealed .reveal-toggle { display: none; }
   .mountain-art .label {
     position: absolute; z-index: 2; left: 50%; top: 1rem;
     transform: translateX(-50%);
@@ -733,6 +734,144 @@
   @media (max-width: 1099px) and (min-width: 920px) { .nav-links { gap: .65rem; font-size: .8rem; } }
   @media (max-width: 380px) { .foot-wordmark { font-size: 1.35rem; } .slogan { font-size: .78rem; } }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } .js .fade { opacity: 1; transform: none; } }
+  /* ======== MAKUNAIMA + TRAIL ======== */
+  #makunaima { background: var(--sage-3); border-color: var(--sage-rule); }
+  #trail { background: var(--sage-1); }
+  :where(#makunaima, #trail) .eyebrow { color: var(--leaf-deep); }
+  :where(#makunaima, #trail) .eyebrow::before { background: var(--leaf); }
+
+  .lineage-title { margin-top: clamp(3rem, 6vw, 4.5rem); }
+  .lineage-title em, .lineage em { font-family: var(--script); font-style: italic; font-weight: 500; }
+  .lineage {
+    list-style: none; margin: 1.75rem 0 0; padding: 0;
+    display: grid; gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    counter-reset: lineage;
+  }
+  .lineage li {
+    position: relative; padding: 1.5rem 1.4rem 1.4rem;
+    background: color-mix(in oklch, var(--paper) 70%, white);
+    border: 1px solid var(--sage-rule); border-top: 3px solid var(--leaf); border-radius: 6px;
+  }
+  .lineage li:nth-child(3) { border-top-color: var(--gold); }
+  .lineage li:nth-child(4) { border-top-color: var(--leaf-deep); }
+  .lineage-when { display: block; font-size: .7rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--leaf-deep); }
+  .lineage li:nth-child(3) .lineage-when { color: var(--gold-deep); }
+  .lineage h4, .stages h4 { margin: .5rem 0 .4rem; font-family: var(--display); font-weight: 400; font-size: 1.45rem; line-height: 1.15; color: var(--ink); }
+  .lineage p, .stages p { margin: 0; color: var(--ink-soft); font-size: .97rem; line-height: 1.55; }
+  .lineage-note { margin: 1.5rem 0 0; max-width: 60ch; font-family: var(--script); font-style: italic; font-size: 1.25rem; color: var(--ink); }
+  .legend-sources { margin-top: 1.25rem; font-size: .82rem; color: var(--muted); }
+  .legend-sources a { color: var(--leaf-deep); text-underline-offset: .2em; }
+
+  .profile { margin: 2.5rem 0 0; }
+  .profile-scroll {
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    background: color-mix(in oklch, var(--paper) 72%, white);
+    border: 1px solid var(--sage-rule); border-radius: 8px; padding: 1rem .5rem .25rem;
+  }
+  .profile-scroll:focus-visible { outline: 2px solid var(--leaf-deep); outline-offset: 3px; }
+  .profile svg { display: block; width: 100%; min-width: 680px; height: auto; }
+  .profile-grid line { stroke: var(--sage-rule); stroke-width: 1; stroke-dasharray: 3 5; }
+  .profile-grid text, .profile-km text { font: 500 12px var(--sans); fill: var(--muted); }
+  .profile-grid text { text-anchor: end; }
+  .profile-line { fill: none; stroke: var(--leaf-deep); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+  .profile-points circle { fill: var(--gold); stroke: color-mix(in oklch, var(--paper) 70%, white); stroke-width: 3; }
+  .profile-labels text { font: 600 14px var(--sans); fill: var(--ink); }
+  .profile figcaption { margin-top: .75rem; font-size: .82rem; color: var(--muted); }
+  .profile-hint { display: none; font-weight: 600; color: var(--leaf-deep); }
+  @media (max-width: 720px) { .profile-hint { display: block; margin-bottom: .25rem; } }
+
+  .stages {
+    list-style: none; margin: 2rem 0 0; padding: 0;
+    display: grid; gap: 0 2rem; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  }
+  .stages li { display: flex; gap: 1rem; padding: 1.1rem 0; border-top: 1px solid var(--sage-rule); }
+  .stages h4 { margin-top: 0; font-size: 1.3rem; }
+  .stage-n { flex: 0 0 2.2rem; font-family: var(--display); font-size: 1.4rem; line-height: 1.2; color: var(--gold-deep); }
+
+  .difficulty {
+    margin-top: 2rem; padding: 1.4rem 1.5rem; max-width: 70ch;
+    background: var(--leaf-deep); color: var(--sage-3); border-radius: 8px;
+  }
+  .difficulty-tag { display: inline-block; margin-bottom: .6rem; padding: .3rem .8rem; border-radius: 999px; background: var(--gold); color: var(--ink); font-size: .72rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+  .difficulty p { margin: 0; font-size: 1.02rem; line-height: 1.6; }
+  .difficulty a { color: var(--sage-1); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+  /* ======== COLLAPSIBLE EXTRAS ======== */
+  .more { margin-top: 2rem; }
+  .more > summary {
+    list-style: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: .9rem;
+    padding: .8rem 1.1rem .8rem 1.3rem; border-radius: 999px;
+    border: 1px solid var(--sage-rule); background: color-mix(in oklch, var(--paper) 70%, white);
+    font-size: .95rem; font-weight: 500; color: var(--ink);
+    transition: background .25s var(--ease), border-color .25s var(--ease);
+  }
+  .more > summary::-webkit-details-marker { display: none; }
+  .more > summary:hover { border-color: var(--leaf); }
+  .more > summary:focus-visible { outline: 2px solid var(--leaf-deep); outline-offset: 3px; }
+  .more-label em { font-family: var(--script); font-style: italic; font-weight: 500; font-size: 1.08em; }
+  .more-icon { position: relative; width: 22px; height: 22px; flex: 0 0 22px; border-radius: 50%; background: var(--leaf-deep); }
+  .more-icon::before, .more-icon::after { content: ""; position: absolute; left: 6px; right: 6px; top: 10px; height: 2px; border-radius: 2px; background: var(--sage-3); transition: transform .3s var(--ease); }
+  .more-icon::after { transform: rotate(90deg); }
+  .more[open] .more-icon::after { transform: rotate(0deg); }
+  .more[open] > summary + * { animation: more-in .45s var(--ease); }
+  @keyframes more-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+  .lineage-more .lineage { margin-top: 1.5rem; }
+  .fauna-more .fauna-grid { margin-top: 1.5rem; }
+
+  /* ======== THE WALK: dark forest band ======== */
+  #trail { background: oklch(0.29 0.055 145); color: var(--sage-1); }
+  #trail h2 { color: var(--sage-3); }
+  #trail .eyebrow { color: var(--gold); }
+  #trail .eyebrow::before { background: var(--gold); }
+  #trail .prose-copy p { color: color-mix(in oklch, var(--sage-1) 88%, transparent); }
+  #trail .profile-scroll { border-color: transparent; box-shadow: 0 24px 50px -30px black; }
+  #trail .profile figcaption { color: color-mix(in oklch, var(--sage-1) 70%, transparent); }
+  #trail .profile-hint { color: var(--gold); }
+  #trail .more > summary { background: transparent; border-color: color-mix(in oklch, var(--sage-1) 35%, transparent); color: var(--sage-3); }
+  #trail .more > summary:hover { border-color: var(--gold); }
+  #trail .more-icon { background: var(--gold); }
+  #trail .more-icon::before, #trail .more-icon::after { background: oklch(0.29 0.055 145); }
+  #trail .stages li { border-top-color: color-mix(in oklch, var(--sage-1) 22%, transparent); }
+  #trail .stages h4 { color: var(--sage-3); }
+  #trail .stages p { color: color-mix(in oklch, var(--sage-1) 82%, transparent); }
+  #trail .stage-n { color: var(--gold); }
+  #trail .difficulty { background: var(--sage-3); color: var(--ink); }
+  #trail .difficulty a { color: var(--leaf-deep); }
+
+  /* ======== THE WALK: footsteps down the page ======== */
+  body { position: relative; }
+  #walk { position: absolute; top: 0; left: 0; width: 100%; z-index: 5; pointer-events: none; overflow: hidden; }
+  #walk svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  #walk .route { fill: none; stroke: var(--walk-ink, var(--gold)); stroke-width: 1.6; stroke-linecap: round; stroke-dasharray: 0.1 9; opacity: .32; }
+  #walk .fp { fill: var(--walk-ink, var(--gold)); opacity: 0; transition: opacity .35s var(--ease); }
+  #walk .fp.on { opacity: .72; }
+  #walk .hiker {
+    position: absolute; top: 0; left: 0; width: 34px; height: 34px; margin: -17px 0 0 -17px;
+    border-radius: 50%; background: var(--paper); border: 1.5px solid var(--gold-deep);
+    box-shadow: 0 6px 14px -6px var(--ink); color: var(--gold-deep);
+    display: grid; place-items: center; will-change: transform; opacity: 0; transition: opacity .3s;
+  }
+  #walk .hiker.ready { opacity: 1; }
+  #walk .hiker svg { position: static; width: 20px; height: 20px; }
+  @media (max-width: 819px) {
+    #walk .fp.on { opacity: .6; }
+    #walk .hiker { width: 22px; height: 22px; margin: -11px 0 0 -11px; }
+    #walk .hiker svg { width: 13px; height: 13px; }
+  }
+  @media print { #walk { display: none; } }
+
+  /* one-off hand-drawn underline */
+  .scribble { position: relative; white-space: nowrap; }
+  .scribble svg { position: absolute; left: -2%; bottom: -.32em; width: 104%; height: .5em; overflow: visible; pointer-events: none; }
+  .scribble path { fill: none; stroke: var(--gold); stroke-width: 2.4; stroke-linecap: round; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: -1; }
+  .scribble path { animation: scribble-in .9s cubic-bezier(.45,.05,.25,1) .9s forwards; }
+  @keyframes scribble-in { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) { .scribble path { stroke-dashoffset: 0 !important; } }
+
+  /* parallax layers move only via JS, and never with reduced motion */
+  .plx { will-change: transform; }
 </style>
 </head>
 <body id="top">
@@ -789,7 +928,7 @@
       <p class="tagline fade">A very personal expedition back to myself.</p>
 
       <p class="hero-sub fade">
-        Two years postpartum, navigating perimenopause and finding my way back to myself. I registered the domain for the rhyme. My mountain is <strong>Monte Roraima</strong>.
+        Two years postpartum, navigating perimenopause and finding my way back to myself. I registered the domain for the rhyme. My mountain is <strong class="scribble">Monte Roraima<svg viewBox="0 0 120 12" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M2 8.5C22 4 46 10.5 70 6.5S108 4.5 118 7"/></svg></strong>.
       </p>
 
       <div class="hero-cta-row fade">
@@ -865,7 +1004,7 @@
         <p>And approximately <strong>twenty kilos</strong> I hadn&rsquo;t invited to stay.</p>
         <p>Now I&rsquo;m navigating postpartum life, perimenopause and a plan that includes Mounjaro. Life looked at everything I&rsquo;d already accomplished and asked if I had room for another challenge.</p>
 
-        <div class="toolkit" aria-label="The toolkit I already have">
+        <div class="toolkit" aria-label="The toolkit I already have" data-walk="circle">
           <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>Oura&nbsp;<small>ring</small></span>
           <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="7" y="5" width="10" height="14" rx="2"/><circle cx="12" cy="12" r="3"/></svg>Garmin&nbsp;<small>watch</small></span>
           <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h18M6 7v10M18 7v10"/></svg>Reformer&nbsp;<small>plan</small></span>
@@ -881,7 +1020,7 @@
 <section id="lazy">
   <div class="wrap">
     <span class="eyebrow">A fair question</span>
-    <h2 class="fade" style="max-width: 22ch;">So, is this the lazy way?</h2>
+    <h2 class="fade" style="max-width: 22ch;">So, is this the <span data-walk="circle">lazy</span> way?</h2>
 
     <div class="prose-copy fade" style="max-width: 62ch; margin-top: 1.5rem;">
       <p>We live in a world where, apparently, there&rsquo;s a pill for everything. Can&rsquo;t sleep? Pill. Can&rsquo;t concentrate? Pill. Can&rsquo;t lose weight? Well, there&rsquo;s an injection for that now. And society has opinions.</p>
@@ -901,7 +1040,7 @@
       </div>
     </div>
 
-    <p class="pullquote fade">I don&rsquo;t want to build my whole identity around an injection. I want to build it around the woman using it.</p>
+    <p class="pullquote fade">I don&rsquo;t want to build my whole identity around an injection. I want to build it around <span data-walk="underline">the woman using it.</span></p>
   </div>
 </section>
 
@@ -916,7 +1055,7 @@
     </div>
 
     <figure class="story-film fade">
-      <div class="film-frame"><video src="images/kilimanjaro-coffee.mp4" poster="images/kilimanjaro-coffee.jpg" controls playsinline preload="metadata" aria-label="Illustrated lotus portrait shifts to a coffee moment in front of Kilimanjaro.">Your browser does not support this video.</video></div>
+      <div class="film-frame" data-walk="circle"><video src="images/kilimanjaro-coffee.mp4" poster="images/kilimanjaro-coffee.jpg" controls playsinline preload="metadata" aria-label="Illustrated lotus portrait shifts to a coffee moment in front of Kilimanjaro.">Your browser does not support this video.</video></div>
       <figcaption><span class="film-label">Chapter two · Kilimanjaro</span><h3>Maybe just a coffee with the mountain.</h3><p>A place I would still love to visit. A safari and a small nearby walk would be enough of an adventure.</p></figcaption>
     </figure>
 
@@ -989,7 +1128,7 @@
       <rect x="0" y="0" width="1600" height="420" fill="url(#sky)"/>
 
       <!-- small sun, upper left -->
-      <g transform="translate(220 110)" opacity="0.6">
+      <g class="plx" data-dy="-26"><g transform="translate(220 110)" opacity="0.6">
         <circle r="32" fill="oklch(0.78 0.14 68)" />
         <g stroke="oklch(0.72 0.14 65)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.85">
           <line x1="0" y1="-48" x2="0" y2="-60"/>
@@ -1001,10 +1140,10 @@
           <line x1="34" y1="-34"  x2="43" y2="-43"/>
           <line x1="-34" y1="34"  x2="43" y2="-43"/>
         </g>
-      </g>
+      </g></g>
 
       <!-- a second, smaller tepui in the background right -->
-      <path fill="url(#tepui2)" d="
+      <path class="plx" data-dy="10" fill="url(#tepui2)" d="
         M1100,420 L1100,260
         L1140,250 L1160,220 L1360,210 L1400,225 L1440,250 L1480,260 L1520,280 L1600,290
         L1600,420 Z
@@ -1021,7 +1160,7 @@
       " />
 
       <!-- cloud belt below the tepui -->
-      <path fill="url(#cloud)" d="
+      <path class="plx" data-dx="-40" data-dy="16" fill="url(#cloud)" d="
         M0,290 L120,280 L260,300 L420,290 L560,310 L700,300 L840,320 L980,305 L1120,315 L1260,300 L1400,315 L1540,305 L1600,310
         L1600,350 L0,350 Z
       " opacity="0.75"/>
@@ -1034,7 +1173,7 @@
       "/>
 
       <!-- birds -->
-      <g fill="none" stroke="oklch(0.28 0.05 60)" stroke-width="2" stroke-linecap="round" opacity="0.65">
+      <g class="plx" data-dx="60" data-dy="-18" fill="none" stroke="oklch(0.28 0.05 60)" stroke-width="2" stroke-linecap="round" opacity="0.65">
         <path d="M680 160 q 8 -6 16 0 q 8 -6 16 0"/>
         <path d="M740 180 q 6 -5 12 0 q 6 -5 12 0"/>
         <path d="M900 140 q 8 -6 16 0 q 8 -6 16 0"/>
@@ -1058,13 +1197,13 @@
       <circle cx="66" cy="76" r="26" fill="oklch(0.78 0.14 68)" opacity=".72"/>
       <path d="M270 340V219l34-8 16-34 70 4v159Z" fill="oklch(0.41 0.04 240)" opacity=".55"/>
       <path d="M0 340v-51l46-8 30-49 30-110 8-8 172-3 9 9 30 111 34 51 31 7v51Z" fill="url(#mobile-tepui)"/>
-      <path d="M0 244q51-15 104 0t101 2q52-9 96 4t89-3v47H0Z" fill="oklch(0.96 0.01 90)" opacity=".47"/>
+      <path class="plx" data-dx="-18" data-dy="8" d="M0 244q51-15 104 0t101 2q52-9 96 4t89-3v47H0Z" fill="oklch(0.96 0.01 90)" opacity=".47"/>
       <path d="M0 340v-43q87-14 194-12t196 14v41Z" fill="url(#mobile-forest)"/>
-      <g fill="none" stroke="oklch(0.28 0.05 60)" stroke-width="1.7" stroke-linecap="round" opacity=".55"><path d="M170 158q6-4 12 0 6-4 12 0"/><path d="M223 179q5-4 10 0 5-4 10 0"/></g>
+      <g class="plx" data-dx="24" data-dy="-10" fill="none" stroke="oklch(0.28 0.05 60)" stroke-width="1.7" stroke-linecap="round" opacity=".55"><path d="M170 158q6-4 12 0 6-4 12 0"/><path d="M223 179q5-4 10 0 5-4 10 0"/></g>
     </svg>
     <img class="mountain-photo" id="roraima-photograph" src="images/roraima-sunrise.jpg" alt="Monte Roraima rising through cloud at sunrise, seen from base camp." aria-hidden="true" loading="lazy" decoding="async" />
     <div class="label">Monte Roraima · 2,810 m · BR &middot; VE &middot; GY</div>
-    <button class="reveal-toggle" type="button" aria-controls="roraima-photograph" aria-pressed="false">
+    <button class="reveal-toggle" type="button" aria-controls="roraima-photograph">
       <span>See the real mountain</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>
     </button>
@@ -1078,6 +1217,110 @@
     </div>
   </figcaption>
   </figure>
+</section>
+
+<section class="prose" id="makunaima">
+  <div class="wrap">
+    <span class="eyebrow">Before the trail</span>
+    <div class="prose-grid">
+      <h2 class="fade">The tree beneath the mountain.</h2>
+      <div class="prose-copy fade">
+        <p>Roraima is part of the homelands and living stories of Kapon and Pemon peoples. There is more than one telling of the great tree of all fruits, called <em>Wayaka</em> or <em>Wazak&aacute;</em>, and of the mountain left by its fall.</p>
+        <p>In an Ingarik&oacute; account told in Kapon by Jo&atilde;o Sales and translated by teacher Samuel Camilo Williams, Makunaim&euml; and his brother Siik&euml; follow an animal to the tree. Siik&euml; brings it down. Water later escapes from the trunk and changes the world around them.</p>
+        <p>Macuxi artist <strong>Jaider Esbell</strong> described the felling of a great tree as the event that became Monte Roraima, and spoke of Makunaima as an ancestor. That is a different way to meet this place than seeing it only as a summit to reach. I want to arrive ready to listen, with a local guide and, ideally, dry socks.</p>
+        <p class="legend-sources">Read the <a href="https://www.indios.org.br/pt/Povo:Ingarik%C3%B3" target="_blank" rel="noopener noreferrer">Ingarik&oacute; account</a> and <a href="https://gamarevista.uol.com.br/formato/conversas/indigena-artista-jaider-esbel-arte-e-politica/" target="_blank" rel="noopener noreferrer">Jaider Esbell&rsquo;s interview</a>. The details vary between communities and narrators.</p>
+      </div>
+    </div>
+
+    <details class="more lineage-more">
+      <summary><span class="more-label">The story behind the name: from Makunaima to <em>Macuna&iacute;ma</em></span><span class="more-icon" aria-hidden="true"></span></summary>
+    <ol class="lineage">
+      <li>
+        <span class="lineage-when">Living tradition</span>
+        <h4>The tellers</h4>
+        <p>Kapon and Pemon peoples tell stories of Makunaima and his kin in different ways. The storytellers and their communities belong at the beginning of this history.</p>
+      </li>
+      <li>
+        <span class="lineage-when">1911&ndash;1913</span>
+        <h4>The record</h4>
+        <p>German ethnographer Theodor Koch-Gr&uuml;nberg records stories told by Pemon narrators Mayulua&iacute;pu and Akuli, later published in <em>Vom Roraima zum Orinoco</em>.</p>
+      </li>
+      <li>
+        <span class="lineage-when">1928</span>
+        <h4>The novel</h4>
+        <p>M&aacute;rio de Andrade draws on the published stories for his modernist novel <em>Macuna&iacute;ma</em>. The Indigenous narrators are much less visible in the version most Brazilians know.</p>
+      </li>
+      <li>
+        <span class="lineage-when">2010s&ndash;2021</span>
+        <h4>An Indigenous voice</h4>
+        <p>Macuxi artist Jaider Esbell writes of Makunaima as his grandfather and ancestor, placing an Indigenous voice back at the centre of the story.</p>
+      </li>
+    </ol>
+    <p class="lineage-note">The mountain has a story before it has a trail.</p>
+    </details>
+  </div>
+</section>
+
+<section id="trail">
+  <div class="wrap">
+    <span class="eyebrow">The walk</span>
+    <h2 class="fade" style="max-width: 24ch;">From savannah to the summit, about 25 kilometres on foot.</h2>
+    <div class="prose-copy fade" style="margin-top: 1.5rem; max-width: 62ch;">
+      <p>The classic route starts on the Venezuelan side. First, 78&nbsp;km by 4x4 from Santa Elena de Uair&eacute;n to the village of Paraitepui. Then on foot across open savannah and two rivers, the T&euml;k and the Kukenan, to base camp under the tepui&rsquo;s near-vertical wall. A natural ramp of loose rock climbs the wall to the summit, which people describe as arriving on another planet.</p>
+      <p>The mountain is protected by Canaima National Park in Venezuela and Monte Roraima National Park in Brazil. My own route, days and access are still to plan with a local guide.</p>
+    </div>
+
+    <figure class="profile fade">
+      <div class="profile-scroll" tabindex="0" role="region" aria-label="Elevation profile, scrolls sideways on small screens">
+        <svg viewBox="0 0 1000 300" role="img" aria-labelledby="profile-title profile-desc">
+          <title id="profile-title">Elevation profile of the classic Roraima route</title>
+          <desc id="profile-desc">From Paraitepui at 1,200 m the trail dips to the Tëk and Kukenan river camps at 1,050 m around kilometre 13, climbs to base camp at 1,870 m around kilometre 22, then up the ramp to the summit camps at 2,700 m around kilometre 24.5, and on across the top to La Proa at 2,750 m around kilometre 34.5.</desc>
+          <defs>
+            <linearGradient id="profile-fill" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0" stop-color="oklch(0.54 0.095 143)" stop-opacity=".55"/>
+              <stop offset="1" stop-color="oklch(0.54 0.095 143)" stop-opacity=".08"/>
+            </linearGradient>
+          </defs>
+          <g class="profile-grid">
+            <line x1="60" x2="940" y1="250" y2="250"/><line x1="60" x2="940" y1="197" y2="197"/><line x1="60" x2="940" y1="145" y2="145"/><line x1="60" x2="940" y1="92" y2="92"/>
+            <text x="50" y="254">1,000</text><text x="50" y="201">1,500</text><text x="50" y="149">2,000</text><text x="50" y="96">2,500 m</text>
+          </g>
+          <path d="M60 229 L353 245 L392 245 L621 158 L685 71 L940 66 L940 250 L60 250 Z" fill="url(#profile-fill)"/>
+          <path class="profile-line" d="M60 229 L353 245 L392 245 L621 158 L685 71 L940 66"/>
+          <g class="profile-points">
+            <circle cx="60" cy="229" r="6"/><circle cx="353" cy="245" r="6"/><circle cx="392" cy="245" r="6"/><circle cx="621" cy="158" r="6"/><circle cx="685" cy="71" r="6"/><circle cx="940" cy="66" r="6"/>
+          </g>
+          <g class="profile-labels">
+            <text x="60" y="212" text-anchor="start">Paraitepui · 1,200</text>
+            <text x="372" y="226" text-anchor="middle">Tëk &amp; Kukenan · 1,050</text>
+            <text x="606" y="146" text-anchor="end">Base camp · 1,870</text>
+            <text x="685" y="50" text-anchor="middle">Summit · 2,700</text>
+            <text x="940" y="44" text-anchor="end">La Proa · 2,750</text>
+          </g>
+          <g class="profile-km">
+            <text x="60" y="276" text-anchor="start">0 km</text><text x="392" y="276" text-anchor="middle">13</text><text x="621" y="276" text-anchor="middle">22</text><text x="685" y="276" text-anchor="middle">24.5</text><text x="940" y="276" text-anchor="end">34.5 km</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption><span class="profile-hint">Swipe the chart to see the climb &rarr;</span> Distances and altitudes are approximate, adapted from a commonly shared trekking profile of the Paraitepui route.</figcaption>
+    </figure>
+
+    <details class="more stages-more">
+      <summary><span class="more-label">See the five stages</span><span class="more-icon" aria-hidden="true"></span></summary>
+    <ol class="stages">
+      <li><span class="stage-n">01</span><div><h4>Santa Elena de Uair&eacute;n &rarr; Paraitepui</h4><p>78&nbsp;km by 4x4. The walk starts at 1,200&nbsp;m.</p></div></li>
+      <li><span class="stage-n">02</span><div><h4>Savannah to the river camps</h4><p>About 13&nbsp;km to the T&euml;k and Kukenan camps, 1,050&nbsp;m.</p></div></li>
+      <li><span class="stage-n">03</span><div><h4>Up to base camp</h4><p>About 9&nbsp;km, climbing to 1,870&nbsp;m under the wall.</p></div></li>
+      <li><span class="stage-n">04</span><div><h4>The ramp</h4><p>Only 2.5&nbsp;km, but steep loose rock, to the summit camps at 2,700&nbsp;m.</p></div></li>
+      <li><span class="stage-n">05</span><div><h4>Across the top</h4><p>Around 10&nbsp;km of wandering: the triple border point, Lago Gladys and La Proa, 2,750&nbsp;m.</p></div></li>
+    </ol>
+    </details>
+
+    <aside class="difficulty fade" aria-label="Difficulty">
+      <span class="difficulty-tag">Difficulty · Hard</span>
+      <p>This is a hard multi-day walk across rough ground, with river crossings and a steep final climb. I want to build fitness steadily and confirm the route&rsquo;s demands with a local guide. That is why the <a href="#prep">preparation plan</a> starts now.</p>
+    </aside>
+  </div>
 </section>
 
 <section class="prose" id="fauna">
@@ -1113,27 +1356,33 @@
         <p>A vivid bird of the wider region. I will check likely habitat with a local guide before adding it to a route list.</p>
       </article>
 
-      <article class="species fade">
+      </div>
+    <details class="more fauna-more">
+      <summary><span class="more-label">See three more species</span><span class="more-icon" aria-hidden="true"></span></summary>
+      <div class="fauna-grid">
+      <article class="species">
         <span class="kind">Flora &middot; carnivorous</span>
         <h3>Sun pitcher</h3>
         <span class="latin">Heliamphora nutans</span>
         <p>A carnivorous plant associated with the tepui landscape. One to learn about and observe without disturbing it.</p>
       </article>
 
-      <article class="species fade">
+      <article class="species">
         <span class="kind">Flora</span>
         <h3>Sundew</h3>
         <span class="latin">Drosera roraimae</span>
         <p>A sundew named for Roraima. I would love to notice the smaller life around the trail as well as the view.</p>
       </article>
 
-      <article class="species fade">
+      <article class="species">
         <span class="kind">Fauna &middot; endemic</span>
         <h3>Roraima bush toad</h3>
         <span class="latin">Oreophrynella quelchii</span>
         <p>A small, dark toad associated with the high tepuis. One to look for carefully, without handling or disturbing it.</p>
       </article>
-    </div>
+      </div>
+    </details>
+
     <p class="mini">Field-guide references: <a href="https://datazone.birdlife.org/species/factsheet/roraiman-antbird-myrmelastes-saturatus">BirdLife</a> · <a href="https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:790110-1">Kew</a> · <a href="https://amphibiansoftheworld.amnh.org/Amphibia/Anura/Bufonidae/Oreophrynella/Oreophrynella-quelchii">American Museum of Natural History</a>. Species and sightings depend on route, habitat and season.</p>
   </div>
 </section>
@@ -1287,15 +1536,241 @@
     var revealButton = reveal.querySelector('.reveal-toggle');
     var revealPhoto = reveal.querySelector('.mountain-photo');
     var revealDrawings = reveal.querySelectorAll('.mountain-art svg');
-    revealButton.addEventListener('click', function () {
-      var showingPhoto = reveal.classList.toggle('is-revealed');
-      revealButton.setAttribute('aria-pressed', String(showingPhoto));
-      revealButton.querySelector('span').textContent = showingPhoto ? 'Back to illustration' : 'See the real mountain';
-      revealPhoto.setAttribute('aria-hidden', String(!showingPhoto));
-      revealDrawings.forEach(function (drawing) { drawing.setAttribute('aria-hidden', String(showingPhoto)); });
-    });
-    var els = document.querySelectorAll('.fade');
+    function showRealMountain() {
+      if (reveal.classList.contains('is-revealed')) return;
+      reveal.classList.add('is-revealed');
+      revealPhoto.setAttribute('aria-hidden', 'false');
+      revealDrawings.forEach(function (drawing) { drawing.setAttribute('aria-hidden', 'true'); });
+    }
+    revealButton.addEventListener('click', showRealMountain);
+    if ('IntersectionObserver' in window) {
+      var revealObserver = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          showRealMountain();
+          revealObserver.disconnect();
+        }
+      }, { threshold: 0.65 });
+      revealObserver.observe(reveal.querySelector('.mountain-art'));
+    }
     var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    /* ---- The walk: footsteps follow a route down the page as you scroll ---- */
+    (function walk() {
+      var body = document.body;
+      var NS = 'http://www.w3.org/2000/svg';
+      var wrap = document.createElement('div');
+      wrap.id = 'walk'; wrap.setAttribute('aria-hidden', 'true');
+      var svg = document.createElementNS(NS, 'svg');
+      svg.innerHTML = '<defs><path id="fp-shape" d="M0-7.5c2.6 0 3.6 2.4 3.6 5.1S2.4 2.6 0 2.6-3.6.3-3.6-2.4-2.6-7.5 0-7.5zM0 4.4c1.5 0 2.4.9 2.4 2.1S1.5 8.6 0 8.6-2.4 7.7-2.4 6.5-1.5 4.4 0 4.4z"/></defs>';
+      var route = document.createElementNS(NS, 'path'); route.setAttribute('class', 'route');
+      var steps = document.createElementNS(NS, 'g');
+      svg.appendChild(route); svg.appendChild(steps);
+      var hiker = document.createElement('div'); hiker.className = 'hiker';
+      hiker.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12.5" cy="3.6" r="1.9"/><path d="M11.6 7.4 9.5 13l3 2.6.8 5.6M11.6 7.4l3 3.6 2.6.5M9.5 13l-2.4 3-2 4.4M8.6 9.4 7.4 12M17.4 8.6l1 12.8"/></svg>';
+      wrap.appendChild(svg); wrap.appendChild(hiker); body.appendChild(wrap);
+
+      var samples = [], fps = [], total = 0, cur = 0, target = 0, last = 0, raf = 0, shown = 0;
+      var seed = 7;
+      function rand() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+      function jit(n) { return (rand() - 0.5) * 2 * n; }
+
+      function docRect(el) {
+        var r = el.getBoundingClientRect();
+        return { x: r.left + window.scrollX, y: r.top + window.scrollY, w: r.width, h: r.height };
+      }
+
+      function buildPoints(W, H) {
+        var mobile = W < 820;
+        var gl = mobile ? 8 : Math.max(24, (W - 1240) / 2 + 20), gr = W - gl;
+        var pts = [{ x: gr, y: 90 }], g = gr;
+        function down(toY) { // walk down the current margin with a little sway
+          var y = pts[pts.length - 1].y;
+          for (y += 340; y < toY - 120; y += 340) pts.push({ x: g + jit(mobile ? 2 : 8), y: y + jit(30) });
+        }
+        function sideOf(x) { return x < W / 2 ? gl : gr; }
+        var marks = mobile ? [] : [].slice.call(document.querySelectorAll('[data-walk]'))
+          .filter(function (el) { return el.offsetParent; })
+          .map(function (el) { var r = docRect(el); return { el: el, kind: el.dataset.walk, r: r, y: r.y }; });
+        // section tops have empty padding: the only place we cross the page
+        var passes = [].slice.call(document.querySelectorAll('body > section, body > footer'))
+          .map(function (el) { return { kind: 'pass', y: docRect(el).y + 34 }; });
+        var stops = marks.concat(passes).sort(function (a, b) { return a.y - b.y; });
+        stops.forEach(function (st, idx) {
+          if (st.kind === 'pass') {
+            var next = stops.slice(idx + 1).filter(function (x) { return x.kind !== 'pass'; })[0];
+            var nextPass = stops.slice(idx + 1).filter(function (x) { return x.kind === 'pass'; })[0];
+            var want = (next && (!nextPass || next.y < nextPass.y)) ? sideOf(next.r.x + next.r.w / 2) : (g === gl ? gr : gl);
+            down(st.y); pts.push({ x: g + jit(4), y: st.y });
+            if (want !== g) { pts.push({ x: W / 2 + jit(W * 0.08), y: st.y + 14 + jit(6) }); pts.push({ x: want, y: st.y + 30 }); g = want; }
+            return;
+          }
+          var r = st.r, tightSpan = st.el && st.el.tagName === 'SPAN' && st.kind === 'circle';
+          var ay = tightSpan ? r.y - 10 : r.y - 40;
+          down(ay); pts.push({ x: g + jit(4), y: ay });
+          if (tightSpan) pts.push({ x: r.x + r.w / 2 + (g < W / 2 ? -40 : 40), y: ay - 4 });
+          if (st.kind === 'underline') {
+            var by = r.y + r.h + 7, n = 7;
+            for (var i = 0; i <= n; i++) pts.push({ x: r.x - 6 + (r.w + 12) * i / n, y: by + (i % 2 ? 2.5 : -1.5) + jit(1) });
+            g = sideOf(r.x + r.w); pts.push({ x: g, y: by + 50 });
+          } else {
+            var tight = st.el && st.el.tagName === 'SPAN';
+            var cx = r.x + r.w / 2, cy = r.y + r.h / 2, rx = r.w / 2 + (tight ? 16 : 22), ry = r.h / 2 + (tight ? 6 : 16);
+            var prev = pts[pts.length - 1];
+            var a0 = Math.atan2((prev.y - cy) / ry, (prev.x - cx) / rx), dir = prev.x < cx ? 1 : -1, k = 12;
+            for (var j = 1; j <= k; j++) {
+              var a = a0 + dir * (Math.PI * 2.12) * j / k, f = 1 + jit(0.04);
+              pts.push({ x: cx + Math.cos(a) * rx * f, y: cy + Math.sin(a) * ry * f });
+            }
+            if (tightSpan) { pts.push({ x: r.x + r.w / 2 + (g < W / 2 ? -40 : 40), y: ay - 8 }); pts.push({ x: g, y: ay + 6 }); }
+            else pts.push({ x: g, y: r.y + r.h + 60 });
+          }
+        });
+        down(H - 60);
+        pts.push({ x: W / 2, y: H - 40 });
+        return pts;
+      }
+
+      // Catmull-Rom through the points, as cubic Béziers
+      function toBeziers(p) {
+        var segs = [];
+        for (var i = 0; i < p.length - 1; i++) {
+          var p0 = p[i - 1] || p[i], p1 = p[i], p2 = p[i + 1], p3 = p[i + 2] || p2;
+          segs.push([p1, { x: p1.x + (p2.x - p0.x) / 6, y: p1.y + (p2.y - p0.y) / 6 }, { x: p2.x - (p3.x - p1.x) / 6, y: p2.y - (p3.y - p1.y) / 6 }, p2]);
+        }
+        return segs;
+      }
+      function bez(s, t) {
+        var u = 1 - t;
+        return { x: u*u*u*s[0].x + 3*u*u*t*s[1].x + 3*u*t*t*s[2].x + t*t*t*s[3].x,
+                 y: u*u*u*s[0].y + 3*u*u*t*s[1].y + 3*u*t*t*s[2].y + t*t*t*s[3].y };
+      }
+
+      function at(len) {
+        if (!samples.length) return { x: 0, y: 0, a: 90 };
+        var lo = 0, hi = samples.length - 1;
+        while (lo < hi) { var mid = (lo + hi) >> 1; if (samples[mid].l < len) lo = mid + 1; else hi = mid; }
+        var b = samples[lo], a = samples[Math.max(0, lo - 1)];
+        var t = b.l === a.l ? 0 : (len - a.l) / (b.l - a.l);
+        return { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t, a: Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI };
+      }
+
+      function build() {
+        seed = 7;
+        var W = document.documentElement.clientWidth, H = body.offsetHeight;
+        wrap.style.height = H + 'px';
+        svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+        var segs = toBeziers(buildPoints(W, H));
+        var d = 'M' + segs[0][0].x.toFixed(1) + ' ' + segs[0][0].y.toFixed(1);
+        samples = []; total = 0; var prev = segs[0][0], maxY = -Infinity;
+        segs.forEach(function (s) {
+          d += 'C' + [s[1], s[2], s[3]].map(function (q) { return q.x.toFixed(1) + ' ' + q.y.toFixed(1); }).join(' ');
+          for (var i = 1; i <= 14; i++) {
+            var q = bez(s, i / 14);
+            total += Math.hypot(q.x - prev.x, q.y - prev.y); prev = q;
+            maxY = Math.max(maxY, q.y);
+            samples.push({ x: q.x, y: q.y, l: total, m: maxY });
+          }
+        });
+        route.setAttribute('d', d);
+        // footprints every stride, alternating left and right of the route
+        var stride = W < 820 ? 30 : 24, html = '';
+        fps = [];
+        for (var L = 12, n = 0; L < total; L += stride, n++) {
+          var p = at(L), side = n % 2 ? 1 : -1, rad = (p.a + 90) * Math.PI / 180;
+          var x = p.x + Math.cos(rad) * 5 * side, y = p.y + Math.sin(rad) * 5 * side;
+          html += '<use href="#fp-shape" class="fp" transform="translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ') rotate(' + (p.a + 90).toFixed(0) + ') scale(' + (W < 820 ? .8 : 1) + ')"/>';
+          fps.push(L);
+        }
+        steps.innerHTML = html;
+        shown = 0;
+        target = goal();
+        if (motion.matches) cur = total; else cur = Math.min(cur, total);
+        paint(true);
+        onScroll();
+      }
+
+      // how far along the route the walker should be for this scroll position
+      function goal() {
+        if (motion.matches) return total;
+        var vh = window.innerHeight, max = Math.max(1, document.documentElement.scrollHeight - vh);
+        var p = Math.min(1, window.scrollY / max);
+        if (p > 0.995) return total;
+        var ty = window.scrollY + vh * 0.7 + p * vh * 0.3;
+        var lo = 0, hi = samples.length - 1;
+        while (lo < hi) { var mid = (lo + hi + 1) >> 1; if (samples[mid].m <= ty) lo = mid; else hi = mid - 1; }
+        return samples.length ? samples[lo].l : 0;
+      }
+
+      function paint(force) {
+        var els = steps.childNodes, count = 0;
+        while (count < fps.length && fps[count] <= cur) count++;
+        if (force || count !== shown) {
+          for (var i = Math.min(count, shown); i < Math.max(count, shown) && i < els.length; i++) els[i].classList.toggle('on', i < count);
+          if (force) for (var j = 0; j < els.length; j++) els[j].classList.toggle('on', j < count);
+          shown = count;
+        }
+        var p = at(cur), tilt = 14 * Math.cos(p.a * Math.PI / 180);
+        hiker.style.transform = 'translate3d(' + p.x.toFixed(1) + 'px,' + p.y.toFixed(1) + 'px,0) rotate(' + tilt.toFixed(1) + 'deg)';
+        hiker.classList.add('ready');
+      }
+
+      function tick(now) {
+        raf = 0;
+        var dt = Math.min(64, now - (last || now)); last = now;
+        target = goal();
+        cur += (target - cur) * (1 - Math.exp(-dt / 140));
+        if (Math.abs(target - cur) < 0.5) cur = target;
+        paint(false);
+        if (cur !== target) raf = requestAnimationFrame(tick); else last = 0;
+      }
+      function onScroll() { if (!raf && !motion.matches) raf = requestAnimationFrame(tick); }
+
+      var pending = 0;
+      function rebuild() { if (pending) return; pending = requestAnimationFrame(function () { pending = 0; build(); }); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', rebuild);
+      window.addEventListener('load', rebuild);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(rebuild);
+      if ('ResizeObserver' in window) new ResizeObserver(rebuild).observe(body);
+      if (motion.addEventListener) motion.addEventListener('change', rebuild);
+      build();
+    }());
+
+    /* ---- Gentle parallax on the Roraima illustration ---- */
+    (function parallax() {
+      var art = document.querySelector('.mountain-art');
+      var layers = art ? art.querySelectorAll('.plx') : [];
+      if (!layers.length) return;
+      var visible = false, ticking = false;
+      function frame() {
+        ticking = false;
+        if (motion.matches) { layers.forEach(function (l) { l.style.transform = ''; }); return; }
+        var r = art.getBoundingClientRect();
+        var t = ((r.top + r.height / 2) - window.innerHeight / 2) / window.innerHeight; // -1..1 around centre
+        t = Math.max(-1, Math.min(1, t));
+        layers.forEach(function (l) {
+          var dx = parseFloat(l.dataset.dx || 0) * t, dy = parseFloat(l.dataset.dy || 0) * t;
+          l.style.transform = 'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px)';
+        });
+      }
+      function request() { if (visible && !ticking) { ticking = true; requestAnimationFrame(frame); } }
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (e) { visible = e[0].isIntersecting; request(); }).observe(art);
+      } else visible = true;
+      window.addEventListener('scroll', request, { passive: true });
+      if (motion.addEventListener) motion.addEventListener('change', function () { ticking = true; requestAnimationFrame(frame); });
+      frame();
+    }());
+
+    /* ---- Open a collapsed section when a link points inside it ---- */
+    function openTarget() {
+      var t = location.hash && document.getElementById(location.hash.slice(1));
+      var d = t && t.closest && t.closest('details');
+      if (d) d.open = true;
+    }
+    window.addEventListener('hashchange', openTarget); openTarget();
+
+    var els = document.querySelectorAll('.fade');
     var heroVideo = document.querySelector('.collage video');
     function syncHeroMotion() {
       if (motion.matches) heroVideo.pause();
